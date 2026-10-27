@@ -1,0 +1,64 @@
+// Qyic deck payload — the data carried inside a `.qdeck` file.
+// Spec: docs/deck-format.md
+//
+// Evolution rules: append-only. Never renumber or reuse field tags.
+
+syntax = "proto3";
+
+package qyic.v1;
+
+// The kind of quiz presented to the learner.
+enum QuizType {
+  QUIZ_TYPE_UNSPECIFIED = 0;
+  QUIZ_TYPE_MULTIPLE_CHOICE = 1;
+  QUIZ_TYPE_FILL_IN_THE_BLANK = 2;
+  QUIZ_TYPE_MATCHING = 3;
+  QUIZ_TYPE_TRUE_FALSE = 4;
+}
+
+// A single answer alternative. For FILL_IN_THE_BLANK the options may be empty
+// (the blank is evaluated against accepted answers in payload semantics), and
+// for MATCHING options hold the right-hand column entries.
+message Option {
+  // Stable id within the quiz (e.g. "opt_a").
+  string id = 1;
+  // Human-readable text.
+  string text = 2;
+  // Optional media asset, archive-relative (e.g. "media/img_01.png").
+  string media_path = 3;
+  // Whether this option is a correct answer.
+  bool is_correct = 4;
+}
+
+// One quiz item.
+message Quiz {
+  // Stable id (uuid) — constant across exports/imports.
+  string id = 1;
+  QuizType type = 2;
+  // The prompt shown to the learner.
+  string question = 3;
+  // Shown after answering, regardless of correctness.
+  string explanation = 4;
+  // Answer alternatives (>= 2 for choice-based types).
+  repeated Option options = 5;
+
+  // --- Optional study history (included only when the exporter opts in) ---
+  // FSRS difficulty parameter at export time.
+  float difficulty = 6;
+  // FSRS stability (days) at export time.
+  float stability = 7;
+}
+
+// A shareable deck.
+message Deck {
+  // Stable id (uuid).
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string author = 4;
+  // Deck content version, bumped by the author on export.
+  int32 version = 5;
+  repeated Quiz quizzes = 6;
+  // BCP-47 content language, e.g. "en", "pt-BR".
+  string locale = 7;
+}

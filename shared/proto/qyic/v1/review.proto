@@ -1,0 +1,60 @@
+// Sync payloads exchanged between clients and the Qyic API.
+// See docs/adr/0006-offline-first-sync.md.
+
+syntax = "proto3";
+
+package qyic.v1;
+
+// FSRS grade given by the learner (or inferred from speed in timed modes).
+enum ReviewRating {
+  REVIEW_RATING_UNSPECIFIED = 0;
+  REVIEW_RATING_AGAIN = 1;
+  REVIEW_RATING_HARD = 2;
+  REVIEW_RATING_GOOD = 3;
+  REVIEW_RATING_EASY = 4;
+}
+
+// An immutable, append-only record of a single review.
+message ReviewEvent {
+  // Device id created at first launch and persisted locally.
+  string client_id = 1;
+  // Monotonic per-device counter; makes sync idempotent.
+  int64 client_seq = 2;
+  // Quiz being reviewed (uuid). Deliberately not a FK: events outlive quizzes.
+  string quiz_id = 3;
+  string deck_id = 4;
+  ReviewRating rating = 5;
+  // Wall-clock time of the review on the device (ms since epoch).
+  int64 reviewed_at_unix_ms = 6;
+  // Time spent answering (ms), used for speed-based scheduling/timed modes.
+  int32 duration_ms = 7;
+}
+
+// ---- Push: client uploads not-yet-acknowledged events ----
+
+message SyncPushRequest {
+  string client_id = 1;
+  repeated ReviewEvent events = 2;
+}
+
+message SyncPushResponse {
+  // Highest client_seq durably stored by the server.
+  int64 last_acked_seq = 1;
+}
+
+// ---- Pull: client downloads changes since its cursor ----
+
+message SyncPullRequest {
+  string client_id = 1;
+  // Opaque-to-client cursor from a previous pull (server-interpreted).
+  int64 since_cursor = 2;
+  int32 limit = 3;
+}
+
+message SyncPullResponse {
+  repeated ReviewEvent events = 1;
+  // Cursor to pass in the next pull.
+  int64 next_cursor = 2;
+  // True when more data is available beyond `limit`.
+  bool has_more = 3;
+}

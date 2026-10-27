@@ -1,0 +1,44 @@
+// Authentication messages (passwordless magic-link flow).
+// The API serves these messages using the proto3 canonical JSON mapping
+// (camelCase keys) — see docs/adr/0005-passwordless-auth.md.
+
+syntax = "proto3";
+
+package qyic.v1;
+
+// POST /api/v1/auth/request
+message LoginRequest {
+  // E-mail address; the only credential Qyic ever collects.
+  string email = 1;
+}
+
+message LoginResponse {
+  // Always true on success (4xx on invalid input / rate limited).
+  bool accepted = 1;
+  // Present only in local/dev when SMTP is not configured: the magic link
+  // that would have been e-mailed.
+  string dev_magic_link = 2;
+}
+
+// GET /api/v1/auth/verify?token=...  |  POST /api/v1/auth/verify
+message VerifyRequest {
+  // Raw magic-link/OTP token. The server only ever stores its SHA-256 hash.
+  string token = 1;
+}
+
+// Successful verification issues a session.
+message Session {
+  // Opaque session bearer token (store: mobile secure storage, web HTTP-only cookie).
+  string token = 1;
+  // RFC 3339 expiry timestamp.
+  string expires_at = 2;
+  string user_id = 3;
+  string email = 4;
+}
+
+// Uniform error shape for the whole API.
+message ErrorResponse {
+  // Machine-readable code, e.g. "invalid_token", "bad_request".
+  string code = 1;
+  string message = 2;
+}

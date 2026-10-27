@@ -1,0 +1,11 @@
+# TypeScript generation (zero-install: the plugin is fetched via npx).
+# Run from this directory:  npx buf generate
+# Dart: see README.md (protoc + protoc_plugin).
+# Rust: generated on demand via prost-build (wired in M1).
+version: v2
+modules:
+  - path: proto
+plugins:
+  - local: ["npx", "-y", "@bufbuild/protoc-gen-es"]
+    out: gen/ts
+    opt: target=ts
