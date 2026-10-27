@@ -1,0 +1,45 @@
+name: qyic
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: qyic_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: qyic
+      POSTGRES_PASSWORD: qyic_dev
+      POSTGRES_DB: qyic_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U qyic -d qyic_dev"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: ./server
+    container_name: qyic_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://qyic:qyic_dev@postgres:5432/qyic_dev
+      BIND_ADDR: 0.0.0.0:8080
+      APP_BASE_URL: ${APP_BASE_URL:-http://localhost:5173}
+      RUST_LOG: ${RUST_LOG:-qyic_server=info,tower_http=info}
+      AUTH_FROM_EMAIL: ${AUTH_FROM_EMAIL:-no-reply@qyic.com}
+      # Empty SMTP_HOST keeps the API in dev mode: magic links are logged
+      # instead of e-mailed (see docs/adr/0005-passwordless-auth.md).
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
