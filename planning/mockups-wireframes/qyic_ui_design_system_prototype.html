@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qyic - Interactive UI Mockup & Design System</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            qyic: {
+              base: '#0F172A',       // Deep Slate
+              surface: '#1E293B',    // Dark Charcoal
+              border: '#334155',     // Muted Gray
+              primary: '#6366F1',    // Electric Indigo
+              primaryHover: '#4F46E5',
+              xp: '#F59E0B',         // Vivid Amber
+              success: '#10B981',    // Emerald Green
+              warning: '#F97316',    // Tangerine
+              error: '#EF4444',      // Rose Red
+              text: '#F8FAFC',       // High-Contrast White
+              muted: '#94A3B8',      // Slate Gray
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'glow-indigo': '0 0 25px -5px rgba(99, 102, 241, 0.3)',
+            'glow-amber': '0 0 20px -5px rgba(245, 158, 11, 0.4)',
+            'glow-emerald': '0 0 20px -5px rgba(16, 185, 129, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0F172A;
+      color: #F8FAFC;
+      font-family: 'Inter', sans-serif;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0F172A;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+    /* Mobile phone bezel shadow */
+    .mobile-frame {
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 12px #1e293b, 0 0 0 14px #334155;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-qyic-base text-qyic-text antialiased selection:bg-qyic-primary selection:text-white">
+
+  <!-- ========================================== -->
+  <!-- TOP CONTROL BAR / VIEWPORT & MODE SWITCHER -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-50 bg-qyic-surface/90 backdrop-blur-md border-b border-qyic-border px-4 py-3">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+      <!-- Brand & Status -->
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-qyic-primary to-purple-500 flex items-center justify-center font-black text-xl text-white shadow-glow-indigo">
+          Q
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold tracking-tight text-lg">Qyic</span>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-semibold uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full">Design Spec v1.0</span>
+          </div>
+          <p class="text-xs text-qyic-muted flex items-center gap-1.5">
+            <span class="inline-block w-2 h-2 rounded-full bg-qyic-success animate-pulse"></span>
+            Offline-First SRS + Gamified Quizzes
+          </p>
+        </div>
+      </div>
+
+      <!-- Mode Selector Tabs -->
+      <nav class="flex items-center bg-qyic-base p-1 rounded-xl border border-qyic-border text-xs font-medium">
+        <button id="btn-mode-web" onclick="switchMode('web')" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all bg-qyic-primary text-white font-semibold shadow-sm">
+          <i data-lucide="monitor" class="w-4 h-4"></i>
+          <span>Web App (Desktop)</span>
+        </button>
+        <button id="btn-mode-mobile" onclick="switchMode('mobile')" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all text-qyic-muted hover:text-qyic-text">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+          <span>Mobile App (Flutter)</span>
+        </button>
+        <button id="btn-mode-formats" onclick="switchMode('formats')" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all text-qyic-muted hover:text-qyic-text">
+          <i data-lucide="gamepad-2" class="w-4 h-4"></i>
+          <span>Quiz Formats Showcase</span>
+        </button>
+        <button id="btn-mode-tokens" onclick="switchMode('tokens')" class="flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all text-qyic-muted hover:text-qyic-text">
+          <i data-lucide="palette" class="w-4 h-4"></i>
+          <span>Design System Tokens</span>
+        </button>
+      </nav>
+
+      <!-- Sync & User State Controls -->
+      <div class="flex items-center space-x-3">
+        <!-- Online/Offline Simulator -->
+        <button id="sync-toggle" onclick="toggleSyncState()" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-all">
+          <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
+          <span id="sync-text">Online & Synced</span>
+        </button>
+        
+        <!-- Gamification Pills -->
+        <div class="hidden sm:flex items-center space-x-2 border-l border-qyic-border pl-3">
+          <div class="flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold" title="Daily Review Streak">
+            <i data-lucide="flame" class="w-4 h-4 fill-amber-500 text-amber-500"></i>
+            <span>12</span>
+          </div>
+          <div class="flex items-center space-x-1 px-2.5 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold" title="XP Level">
+            <i data-lucide="zap" class="w-4 h-4 fill-indigo-400"></i>
+            <span>Lv. 8</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VIEWPORT CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col justify-center">
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: WEB DESKTOP LAYOUT                 -->
+    <!-- ========================================== -->
+    <div id="view-web" class="space-y-6">
+      <!-- 3-ZONE MODULAR DESKTOP CONTAINER -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+        <!-- ZONE 1: DESKTOP NAVIGATION SIDEBAR (Col 2) -->
+        <aside class="lg:col-span-2 bg-qyic-surface border border-qyic-border rounded-2xl p-4 space-y-6">
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-qyic-muted px-3">Study Hub</span>
+            <a href="#" onclick="showWebTab('dashboard')" id="nav-dash" class="flex items-center space-x-3 px-3 py-2 rounded-xl bg-qyic-primary text-white font-medium text-sm transition-all shadow-sm">
+              <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+              <span>Dashboard</span>
+            </a>
+            <a href="#" onclick="showWebTab('study')" id="nav-study" class="flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all">
+              <i data-lucide="play-circle" class="w-4 h-4"></i>
+              <span>Quiz Arena</span>
+              <span class="ml-auto bg-qyic-xp text-qyic-base text-[10px] font-extrabold px-1.5 py-0.5 rounded-md">28</span>
+            </a>
+            <a href="#" onclick="openDeckModal()" class="flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all">
+              <i data-lucide="folder-kanban" class="w-4 h-4"></i>
+              <span>Decks</span>
+            </a>
+          </div>
+
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono font-semibold uppercase tracking-wider text-qyic-muted px-3">Analytics & Sync</span>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all">
+              <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+              <span>FSRS Stats</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              <span>Sync Queue</span>
+            </a>
+            <a href="#" class="flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all">
+              <i data-lucide="settings" class="w-4 h-4"></i>
+              <span>Settings</span>
+            </a>
+          </div>
+
+          <!-- Portable Deck Dropzone -->
+          <div class="pt-4 border-t border-qyic-border">
+            <div onclick="openDeckModal()" class="p-3 border-2 border-dashed border-qyic-border rounded-xl text-center hover:border-qyic-primary transition-all cursor-pointer group bg-qyic-base/50">
+              <i data-lucide="file-up" class="w-6 h-6 mx-auto text-qyic-muted group-hover:text-qyic-primary transition-colors"></i>
+              <span class="block text-xs font-semibold text-qyic-text mt-1">Import .qdeck</span>
+              <span class="block text-[10px] text-qyic-muted">Protobuf + Media bundle</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ZONE 2: PRIMARY WORKSPACE AREA (Col 7) -->
+        <main class="lg:col-span-7 space-y-6">
+
+          <!-- TAB CONTENT A: DASHBOARD VIEW -->
+          <div id="tab-web-dashboard" class="space-y-6">
+            <!-- HERO BANNER -->
+            <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-indigo-900/60 via-qyic-surface to-slate-900 border border-qyic-primary/30 p-6 shadow-glow-indigo">
+              <div class="relative z-10 space-y-3">
+                <div class="flex items-center space-x-2 text-indigo-300 text-xs font-semibold uppercase tracking-wider">
+                  <i data-lucide="target" class="w-4 h-4 text-qyic-xp"></i>
+                  <span>Daily Spaced Repetition Session</span>
+                </div>
+                <h1 class="text-2xl font-extrabold text-white">Daily Review Goal: 15 / 30 Cards</h1>
+                <p class="text-sm text-qyic-muted max-w-lg">
+                  FSRS schedule algorithm has calculated <strong class="text-white">28 optimal reviews</strong> across 3 decks for maximum long-term memory retention.
+                </p>
+                <div class="pt-2 flex flex-wrap items-center gap-3">
+                  <button onclick="showWebTab('study')" class="px-5 py-2.5 rounded-xl bg-qyic-primary hover:bg-qyic-primaryHover text-white font-bold text-sm transition-all shadow-lg flex items-center space-x-2">
+                    <i data-lucide="zap" class="w-4 h-4 fill-white"></i>
+                    <span>Start Daily Queue (28 Cards)</span>
+                  </button>
+                  <button onclick="openDeckModal()" class="px-4 py-2.5 rounded-xl bg-qyic-base border border-qyic-border hover:bg-qyic-border text-qyic-text font-medium text-sm transition-all">
+                    View Decks
+                  </button>
+                </div>
+              </div>
+              <div class="absolute -right-6 -bottom-6 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
+            </div>
+
+            <!-- DECKS GRID -->
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                  <i data-lucide="layers" class="w-5 h-5 text-qyic-primary"></i>
+                  Active Decks
+                </h2>
+                <button onclick="openDeckModal()" class="text-xs text-qyic-primary font-semibold hover:underline flex items-center gap-1">
+                  <i data-lucide="plus-circle" class="w-3.5 h-3.5"></i>
+                  Create or Import Deck
+                </button>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- DECK CARD 1 -->
+                <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-5 hover:border-qyic-primary/60 transition-all group relative">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center space-x-3">
+                      <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg">
+                        🦀
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-white group-hover:text-qyic-primary transition-colors">Rust Async & Axum Architecture</h3>
+                        <p class="text-xs text-qyic-muted">Backend & Systems • 140 Cards</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-500/20">
+                      12 Due
+                    </span>
+                  </div>
+
+                  <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-xs">
+                      <span class="text-qyic-muted">FSRS Retention Rate</span>
+                      <span class="font-mono font-semibold text-emerald-400">92.4%</span>
+                    </div>
+                    <div class="w-full bg-qyic-base h-2 rounded-full overflow-hidden flex">
+                      <div class="bg-emerald-500 h-full w-[70%]" title="Mature Cards"></div>
+                      <div class="bg-indigo-500 h-full w-[20%]" title="Learning"></div>
+                      <div class="bg-amber-500 h-full w-[10%]" title="New/Relearn"></div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-3 border-t border-qyic-border flex items-center justify-between text-xs">
+                    <span class="text-qyic-muted flex items-center gap-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5"></i> 10 min session
+                    </span>
+                    <button onclick="showWebTab('study')" class="px-3 py-1.5 rounded-lg bg-qyic-primary/20 text-indigo-300 font-semibold hover:bg-qyic-primary hover:text-white transition-all">
+                      Review Now
+                    </button>
+                  </div>
+                </div>
+
+                <!-- DECK CARD 2 -->
+                <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-5 hover:border-qyic-primary/60 transition-all group relative">
+                  <div class="flex items-start justify-between">
+                    <div class="flex items-center space-x-3">
+                      <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                        📱
+                      </div>
+                      <div>
+                        <h3 class="font-bold text-white group-hover:text-qyic-primary transition-colors">Flutter 120fps Rendering & SQLite</h3>
+                        <p class="text-xs text-qyic-muted">Mobile Architecture • 85 Cards</p>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-amber-500/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-500/20">
+                      16 Due
+                    </span>
+                  </div>
+
+                  <div class="mt-4 space-y-2">
+                    <div class="flex justify-between text-xs">
+                      <span class="text-qyic-muted">FSRS Retention Rate</span>
+                      <span class="font-mono font-semibold text-emerald-400">88.1%</span>
+                    </div>
+                    <div class="w-full bg-qyic-base h-2 rounded-full overflow-hidden flex">
+                      <div class="bg-emerald-500 h-full w-[55%]" title="Mature"></div>
+                      <div class="bg-indigo-500 h-full w-[30%]" title="Learning"></div>
+                      <div class="bg-amber-500 h-full w-[15%]" title="New"></div>
+                    </div>
+                  </div>
+
+                  <div class="mt-4 pt-3 border-t border-qyic-border flex items-center justify-between text-xs">
+                    <span class="text-qyic-muted flex items-center gap-1">
+                      <i data-lucide="clock" class="w-3.5 h-3.5"></i> 8 min session
+                    </span>
+                    <button onclick="showWebTab('study')" class="px-3 py-1.5 rounded-lg bg-qyic-primary/20 text-indigo-300 font-semibold hover:bg-qyic-primary hover:text-white transition-all">
+                      Review Now
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB CONTENT B: ACTIVE STUDY QUIZ ARENA -->
+          <div id="tab-web-study" class="hidden space-y-6">
+            <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-6 relative overflow-hidden">
+              
+              <!-- QUIZ ARENA HEADER HUD -->
+              <div class="flex items-center justify-between pb-4 border-b border-qyic-border">
+                <div class="flex items-center space-x-3">
+                  <button onclick="showWebTab('dashboard')" class="p-2 rounded-xl bg-qyic-base text-qyic-muted hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                  </button>
+                  <div>
+                    <span class="text-xs font-mono text-qyic-primary font-semibold">MULTIPLE CHOICE QUIZ</span>
+                    <h3 class="text-sm font-bold text-white">Rust Memory Model & Lifetimes</h3>
+                  </div>
+                </div>
+
+                <!-- Progress Bar & Counter -->
+                <div class="flex items-center space-x-4">
+                  <div class="hidden sm:block text-right">
+                    <span class="text-xs text-qyic-muted">Card Progress</span>
+                    <div class="text-xs font-bold text-white">6 / 10 Cards</div>
+                  </div>
+                  <div class="w-24 bg-qyic-base h-2 rounded-full overflow-hidden">
+                    <div class="bg-qyic-primary h-full w-[60%]"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- QUESTION CONTAINER -->
+              <div class="py-8 space-y-6 text-center">
+                <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-mono">
+                  Question 6 of 10
+                </span>
+                <h2 class="text-xl md:text-2xl font-bold text-white max-w-xl mx-auto leading-relaxed">
+                  Which Rust trait keyword guarantees that a type can be safely transferred across thread boundaries?
+                </h2>
+
+                <!-- MULTIPLE CHOICE INTERACTIVE OPTIONS -->
+                <div id="mc-options" class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-2xl mx-auto text-left pt-2">
+                  
+                  <button onclick="selectMcOption(this, false)" class="mc-btn p-4 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary transition-all flex items-center justify-between group">
+                    <div class="flex items-center space-x-3">
+                      <span class="w-7 h-7 rounded-lg bg-qyic-surface border border-qyic-border text-qyic-muted text-xs font-bold flex items-center justify-center group-hover:border-qyic-primary group-hover:text-qyic-primary">A</span>
+                      <span class="text-sm font-medium text-qyic-text"><code>Sync</code></span>
+                    </div>
+                    <i data-lucide="circle" class="w-4 h-4 text-qyic-muted opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </button>
+
+                  <button onclick="selectMcOption(this, true)" class="mc-btn p-4 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary transition-all flex items-center justify-between group">
+                    <div class="flex items-center space-x-3">
+                      <span class="w-7 h-7 rounded-lg bg-qyic-surface border border-qyic-border text-qyic-muted text-xs font-bold flex items-center justify-center group-hover:border-qyic-primary group-hover:text-qyic-primary">B</span>
+                      <span class="text-sm font-medium text-qyic-text"><code>Send</code></span>
+                    </div>
+                    <i data-lucide="circle" class="w-4 h-4 text-qyic-muted opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </button>
+
+                  <button onclick="selectMcOption(this, false)" class="mc-btn p-4 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary transition-all flex items-center justify-between group">
+                    <div class="flex items-center space-x-3">
+                      <span class="w-7 h-7 rounded-lg bg-qyic-surface border border-qyic-border text-qyic-muted text-xs font-bold flex items-center justify-center group-hover:border-qyic-primary group-hover:text-qyic-primary">C</span>
+                      <span class="text-sm font-medium text-qyic-text"><code>Copy</code></span>
+                    </div>
+                    <i data-lucide="circle" class="w-4 h-4 text-qyic-muted opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </button>
+
+                  <button onclick="selectMcOption(this, false)" class="mc-btn p-4 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary transition-all flex items-center justify-between group">
+                    <div class="flex items-center space-x-3">
+                      <span class="w-7 h-7 rounded-lg bg-qyic-surface border border-qyic-border text-qyic-muted text-xs font-bold flex items-center justify-center group-hover:border-qyic-primary group-hover:text-qyic-primary">D</span>
+                      <span class="text-sm font-medium text-qyic-text"><code>Clone</code></span>
+                    </div>
+                    <i data-lucide="circle" class="w-4 h-4 text-qyic-muted opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                  </button>
+
+                </div>
+              </div>
+
+              <!-- FSRS SPACED REPETITION FOOTER BAR -->
+              <div id="fsrs-bar" class="mt-4 pt-4 border-t border-qyic-border">
+                <div class="text-center mb-3">
+                  <span class="text-xs font-mono uppercase tracking-wider text-qyic-muted">Rate your memory recall (FSRS Spaced Repetition)</span>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  
+                  <button onclick="rateFsrs('again')" class="p-3 rounded-xl bg-qyic-error/10 border border-qyic-error/30 text-qyic-error hover:bg-qyic-error hover:text-white transition-all text-center space-y-0.5 group">
+                    <div class="text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1">
+                      <span>[1] Again</span>
+                    </div>
+                    <div class="text-[11px] font-mono opacity-80">&lt; 1 min</div>
+                  </button>
+
+                  <button onclick="rateFsrs('hard')" class="p-3 rounded-xl bg-qyic-warning/10 border border-qyic-warning/30 text-qyic-warning hover:bg-qyic-warning hover:text-white transition-all text-center space-y-0.5 group">
+                    <div class="text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1">
+                      <span>[2] Hard</span>
+                    </div>
+                    <div class="text-[11px] font-mono opacity-80">1.2 days</div>
+                  </button>
+
+                  <button onclick="rateFsrs('good')" class="p-3 rounded-xl bg-qyic-primary/10 border border-qyic-primary/30 text-indigo-300 hover:bg-qyic-primary hover:text-white transition-all text-center space-y-0.5 group">
+                    <div class="text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1">
+                      <span>[3] Good</span>
+                    </div>
+                    <div class="text-[11px] font-mono opacity-80">3.5 days</div>
+                  </button>
+
+                  <button onclick="rateFsrs('easy')" class="p-3 rounded-xl bg-qyic-success/10 border border-qyic-success/30 text-qyic-success hover:bg-qyic-success hover:text-white transition-all text-center space-y-0.5 group">
+                    <div class="text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1">
+                      <span>[4] Easy</span>
+                    </div>
+                    <div class="text-[11px] font-mono opacity-80">7.0 days</div>
+                  </button>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </main>
+
+        <!-- ZONE 3: CONTEXTUAL SIDE PANEL (Col 3) -->
+        <aside class="lg:col-span-3 space-y-6">
+          
+          <!-- ACTIVITY HEATMAP CARD -->
+          <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xs font-bold uppercase text-white flex items-center gap-1.5">
+                <i data-lucide="calendar" class="w-4 h-4 text-qyic-xp"></i>
+                Study Consistency
+              </h3>
+              <span class="text-[10px] text-qyic-muted">Last 4 Weeks</span>
+            </div>
+
+            <!-- Heatmap Grid -->
+            <div class="grid grid-cols-7 gap-1.5 pt-1">
+              <!-- Row 1 -->
+              <div class="w-full aspect-square rounded-md bg-emerald-500/20" title="3 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/60" title="12 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500" title="25 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-qyic-base" title="0 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/40" title="8 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500" title="30 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/80" title="20 cards"></div>
+              <!-- Row 2 -->
+              <div class="w-full aspect-square rounded-md bg-emerald-500" title="28 cards"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/40"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/80"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/20"></div>
+              <div class="w-full aspect-square rounded-md bg-qyic-base"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500"></div>
+              <!-- Row 3 -->
+              <div class="w-full aspect-square rounded-md bg-emerald-500/80"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/40"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500/80"></div>
+              <div class="w-full aspect-square rounded-md bg-emerald-500 border-2 border-white shadow-glow-emerald"></div>
+            </div>
+
+            <div class="flex items-center justify-between text-[10px] text-qyic-muted pt-1">
+              <span>Less</span>
+              <div class="flex space-x-1">
+                <span class="w-2.5 h-2.5 rounded bg-qyic-base"></span>
+                <span class="w-2.5 h-2.5 rounded bg-emerald-500/30"></span>
+                <span class="w-2.5 h-2.5 rounded bg-emerald-500/60"></span>
+                <span class="w-2.5 h-2.5 rounded bg-emerald-500"></span>
+              </div>
+              <span>More</span>
+            </div>
+          </div>
+
+          <!-- FSRS RETENTION FORECAST CHART -->
+          <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-4 space-y-3">
+            <h3 class="text-xs font-bold uppercase text-white flex items-center gap-1.5">
+              <i data-lucide="trending-up" class="w-4 h-4 text-qyic-primary"></i>
+              FSRS Review Forecast
+            </h3>
+
+            <!-- Simulated Histogram -->
+            <div class="space-y-2 pt-2">
+              <div class="space-y-1">
+                <div class="flex justify-between text-[11px]">
+                  <span class="text-qyic-muted">Tomorrow</span>
+                  <span class="text-white font-mono font-bold">18 Cards</span>
+                </div>
+                <div class="w-full bg-qyic-base h-2 rounded-full overflow-hidden">
+                  <div class="bg-qyic-primary h-full w-[60%]"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between text-[11px]">
+                  <span class="text-qyic-muted">In 3 Days</span>
+                  <span class="text-white font-mono font-bold">32 Cards</span>
+                </div>
+                <div class="w-full bg-qyic-base h-2 rounded-full overflow-hidden">
+                  <div class="bg-indigo-400 h-full w-[90%]"></div>
+                </div>
+              </div>
+
+              <div class="space-y-1">
+                <div class="flex justify-between text-[11px]">
+                  <span class="text-qyic-muted">In 7 Days</span>
+                  <span class="text-white font-mono font-bold">12 Cards</span>
+                </div>
+                <div class="w-full bg-qyic-base h-2 rounded-full overflow-hidden">
+                  <div class="bg-emerald-400 h-full w-[40%]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAMIFICATION BADGES -->
+          <div class="bg-qyic-surface border border-qyic-border rounded-2xl p-4 space-y-3">
+            <h3 class="text-xs font-bold uppercase text-white flex items-center gap-1.5">
+              <i data-lucide="award" class="w-4 h-4 text-qyic-xp"></i>
+              Recent Achievements
+            </h3>
+            <div class="flex items-center space-x-3 bg-qyic-base/60 p-2.5 rounded-xl border border-qyic-border">
+              <div class="w-9 h-9 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-lg">
+                🏆
+              </div>
+              <div>
+                <div class="text-xs font-bold text-white">Consistent Scholar</div>
+                <div class="text-[10px] text-qyic-muted">7-Day review streak unlocked</div>
+              </div>
+            </div>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: MOBILE APP LAYOUT (FLUTTER FRAME)  -->
+    <!-- ========================================== -->
+    <div id="view-mobile" class="hidden flex flex-col items-center justify-center py-4">
+      <div class="text-center mb-4 space-y-1">
+        <span class="text-xs font-mono uppercase text-qyic-primary font-bold">Flutter Mobile Frame (Android / iOS)</span>
+        <p class="text-xs text-qyic-muted">60-120 FPS Native Touch UI with Bottom Navigation Shell</p>
+      </div>
+
+      <!-- SMARTPHONE BEZEL -->
+      <div class="mobile-frame w-[360px] h-[720px] bg-qyic-base rounded-[40px] overflow-hidden flex flex-col relative border-4 border-qyic-border">
+        
+        <!-- PHONE NOTCH / STATUS BAR -->
+        <div class="bg-qyic-surface px-6 pt-3 pb-2 flex items-center justify-between text-xs text-qyic-muted border-b border-qyic-border/50">
+          <span class="font-mono text-[10px] font-bold text-white">09:41</span>
+          <!-- Dynamic Island / Notch -->
+          <div class="w-16 h-3 bg-qyic-base rounded-full"></div>
+          <div class="flex items-center space-x-1">
+            <i data-lucide="wifi" class="w-3 h-3 text-white"></i>
+            <i data-lucide="battery" class="w-3.5 h-3.5 text-white"></i>
+          </div>
+        </div>
+
+        <!-- MOBILE APP TOP HUD BAR -->
+        <div class="bg-qyic-surface px-4 py-3 flex items-center justify-between border-b border-qyic-border">
+          <div class="flex items-center space-x-2">
+            <div class="w-7 h-7 rounded-lg bg-qyic-primary flex items-center justify-center font-black text-xs text-white">Q</div>
+            <span class="font-bold text-sm text-white">Qyic Mobile</span>
+          </div>
+          <div class="flex items-center space-x-2 text-xs">
+            <div class="flex items-center space-x-1 px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 font-bold border border-amber-500/20 text-[10px]">
+              <i data-lucide="flame" class="w-3 h-3 fill-amber-500"></i>
+              <span>12</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- MOBILE CONTENT SCROLLABLE AREA -->
+        <div id="mobile-screen-content" class="flex-1 overflow-y-auto p-4 space-y-4">
+          
+          <!-- MOBILE HERO BANNER -->
+          <div class="p-4 rounded-2xl bg-gradient-to-br from-indigo-900/80 to-qyic-surface border border-qyic-primary/40 space-y-2">
+            <span class="text-[10px] font-mono font-bold uppercase text-indigo-300">Daily Queue Ready</span>
+            <h2 class="text-base font-extrabold text-white">28 Cards to Review</h2>
+            <p class="text-xs text-qyic-muted">Estimated time: 12 minutes</p>
+            <button onclick="switchMode('formats')" class="w-full mt-2 py-2 rounded-xl bg-qyic-primary text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-transform">
+              <i data-lucide="zap" class="w-3.5 h-3.5 fill-white"></i>
+              <span>Start Quick Review</span>
+            </button>
+          </div>
+
+          <!-- MOBILE DECK CARDS -->
+          <div class="space-y-3">
+            <div class="text-xs font-bold text-white uppercase tracking-wider">Your Decks</div>
+            
+            <div class="p-3 bg-qyic-surface border border-qyic-border rounded-xl space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-white">Rust Async Architecture</span>
+                <span class="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2 py-0.5 rounded-full border border-amber-500/20">12 Due</span>
+              </div>
+              <div class="w-full bg-qyic-base h-1.5 rounded-full overflow-hidden">
+                <div class="bg-qyic-success h-full w-[70%]"></div>
+              </div>
+            </div>
+
+            <div class="p-3 bg-qyic-surface border border-qyic-border rounded-xl space-y-2">
+              <div class="flex justify-between items-center">
+                <span class="text-xs font-bold text-white">Flutter SQLite & FSRS</span>
+                <span class="text-[10px] bg-amber-500/10 text-amber-400 font-bold px-2 py-0.5 rounded-full border border-amber-500/20">16 Due</span>
+              </div>
+              <div class="w-full bg-qyic-base h-1.5 rounded-full overflow-hidden">
+                <div class="bg-qyic-success h-full w-[50%]"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- MOBILE BOTTOM NAVIGATION BAR -->
+        <div class="bg-qyic-surface border-t border-qyic-border px-4 py-2 flex items-center justify-around">
+          <button class="flex flex-col items-center space-y-1 text-qyic-primary">
+            <i data-lucide="home" class="w-5 h-5"></i>
+            <span class="text-[10px] font-semibold">Home</span>
+          </button>
+          <button onclick="switchMode('formats')" class="flex flex-col items-center space-y-1 text-qyic-muted hover:text-white">
+            <i data-lucide="play-circle" class="w-5 h-5"></i>
+            <span class="text-[10px] font-semibold">Study</span>
+          </button>
+          <button onclick="openDeckModal()" class="flex flex-col items-center space-y-1 text-qyic-muted hover:text-white">
+            <i data-lucide="folder" class="w-5 h-5"></i>
+            <span class="text-[10px] font-semibold">Decks</span>
+          </button>
+          <button class="flex flex-col items-center space-y-1 text-qyic-muted hover:text-white">
+            <i data-lucide="user" class="w-5 h-5"></i>
+            <span class="text-[10px] font-semibold">Profile</span>
+          </button>
+        </div>
+
+        <!-- HOME INDICATOR BAR -->
+        <div class="bg-qyic-surface pb-1 flex justify-center">
+          <div class="w-28 h-1 bg-qyic-border rounded-full"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: DYNAMIC QUIZ FORMATS SHOWCASE      -->
+    <!-- ========================================== -->
+    <div id="view-formats" class="hidden space-y-6">
+      <div class="text-center max-w-xl mx-auto space-y-2">
+        <h2 class="text-2xl font-extrabold text-white">Dynamic Gamified Quiz Formats</h2>
+        <p class="text-sm text-qyic-muted">Qyic converts passive memory cards into 4 active interactive game modes.</p>
+      </div>
+
+      <!-- FORMAT SWITCHER TABS -->
+      <div class="flex justify-center border-b border-qyic-border pb-3">
+        <div class="flex flex-wrap gap-2 bg-qyic-surface p-1.5 rounded-2xl border border-qyic-border text-xs font-semibold">
+          <button id="fmt-tab-mc" onclick="showQuizFormat('mc')" class="px-4 py-2 rounded-xl bg-qyic-primary text-white shadow-sm transition-all">
+            1. Multiple Choice
+          </button>
+          <button id="fmt-tab-fill" onclick="showQuizFormat('fill')" class="px-4 py-2 rounded-xl text-qyic-muted hover:text-white transition-all">
+            2. Fill-in-the-Blank
+          </button>
+          <button id="fmt-tab-match" onclick="showQuizFormat('match')" class="px-4 py-2 rounded-xl text-qyic-muted hover:text-white transition-all">
+            3. Matching Pairs
+          </button>
+          <button id="fmt-tab-tf" onclick="showQuizFormat('tf')" class="px-4 py-2 rounded-xl text-qyic-muted hover:text-white transition-all">
+            4. True / False
+          </button>
+        </div>
+      </div>
+
+      <!-- FORMAT ARENA CONTAINER -->
+      <div class="max-w-2xl mx-auto bg-qyic-surface border border-qyic-border rounded-2xl p-6 shadow-xl">
+
+        <!-- FORMAT 1: MULTIPLE CHOICE -->
+        <div id="fmt-mc" class="space-y-6">
+          <div class="text-xs font-mono text-qyic-primary font-bold">MULTIPLE CHOICE MODE</div>
+          <h3 class="text-lg font-bold text-white">What is the average latency of SvelteKit imperative JS compared to VDOM frameworks?</h3>
+          <div class="space-y-2">
+            <div onclick="toggleAnswerFeedback(this, true)" class="p-3.5 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary cursor-pointer transition-all flex justify-between items-center">
+              <span class="text-sm font-medium">Near zero virtual DOM overhead (~2-3x faster DOM updates)</span>
+              <span class="text-xs font-bold text-qyic-muted">[Click to Test]</span>
+            </div>
+            <div onclick="toggleAnswerFeedback(this, false)" class="p-3.5 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary cursor-pointer transition-all flex justify-between items-center">
+              <span class="text-sm font-medium">Equal speed due to JS runtime interpretation</span>
+              <span class="text-xs font-bold text-qyic-muted">[Click to Test]</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMAT 2: FILL-IN-THE-BLANK -->
+        <div id="fmt-fill" class="hidden space-y-6">
+          <div class="text-xs font-mono text-qyic-primary font-bold">FILL-IN-THE-BLANK MODE</div>
+          <h3 class="text-lg font-bold text-white">Complete the Protobuf schema statement:</h3>
+          <p class="text-sm text-qyic-muted bg-qyic-base p-4 rounded-xl border border-qyic-border font-mono">
+            Decks are packed inside a single compact <span class="text-indigo-400 font-bold">.qdeck</span> binary file which uses <span class="text-amber-400 font-bold">________</span> serialization.
+          </p>
+          <div class="space-y-2">
+            <input type="text" id="fill-input" placeholder="Type answer here (e.g. Protocol Buffers)..." class="w-full px-4 py-3 rounded-xl bg-qyic-base border border-qyic-border text-white text-sm focus:outline-none focus:border-qyic-primary focus:ring-1 focus:ring-qyic-primary transition-all">
+            <button onclick="checkFillAnswer()" class="w-full py-2.5 rounded-xl bg-qyic-primary text-white font-bold text-sm hover:bg-qyic-primaryHover transition-all">
+              Submit Answer
+            </button>
+            <div id="fill-feedback" class="hidden p-3 rounded-xl text-xs font-bold"></div>
+          </div>
+        </div>
+
+        <!-- FORMAT 3: MATCHING PAIRS -->
+        <div id="fmt-match" class="hidden space-y-6">
+          <div class="text-xs font-mono text-qyic-primary font-bold">MATCHING PAIRS GRID MODE</div>
+          <h3 class="text-lg font-bold text-white">Tap matching term and definition pairs:</h3>
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div onclick="selectMatchTile(this)" class="match-tile p-3 bg-qyic-base border border-qyic-border rounded-xl text-center font-semibold hover:border-indigo-500 cursor-pointer transition-all">
+              Rust Backend
+            </div>
+            <div onclick="selectMatchTile(this)" class="match-tile p-3 bg-qyic-base border border-qyic-border rounded-xl text-center font-semibold hover:border-indigo-500 cursor-pointer transition-all">
+              SQLite + Flutter
+            </div>
+            <div onclick="selectMatchTile(this)" class="match-tile p-3 bg-qyic-base border border-qyic-border rounded-xl text-center font-semibold hover:border-indigo-500 cursor-pointer transition-all">
+              Mobile Client
+            </div>
+            <div onclick="selectMatchTile(this)" class="match-tile p-3 bg-qyic-base border border-qyic-border rounded-xl text-center font-semibold hover:border-indigo-500 cursor-pointer transition-all">
+              Axum + SQLx
+            </div>
+          </div>
+          <p class="text-[11px] text-qyic-muted text-center">Interactive drag/tap matching algorithm built for tactile touchscreens.</p>
+        </div>
+
+        <!-- FORMAT 4: TRUE / FALSE -->
+        <div id="fmt-tf" class="hidden space-y-6">
+          <div class="text-xs font-mono text-qyic-primary font-bold">TRUE / FALSE SPLIT MODE</div>
+          <h3 class="text-lg font-bold text-white">"Qyic requires Redis for sync queue management."</h3>
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <button onclick="alert('Correct! PostgreSQL handles SKIP LOCKED job queues with zero extra services.')" class="p-6 rounded-2xl bg-emerald-500/10 border-2 border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all font-black text-xl flex flex-col items-center gap-1">
+              <span>TRUE</span>
+              <span class="text-xs font-normal opacity-80">Statement is correct</span>
+            </button>
+            <button onclick="alert('Incorrect! Qyic uses PostgreSQL for everything to keep deployment light.')" class="p-6 rounded-2xl bg-rose-500/10 border-2 border-rose-500/30 text-rose-400 hover:bg-rose-500 hover:text-white transition-all font-black text-xl flex flex-col items-center gap-1">
+              <span>FALSE</span>
+              <span class="text-xs font-normal opacity-80">Statement is false</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEW 4: DESIGN SYSTEM TOKENS               -->
+    <!-- ========================================== -->
+    <div id="view-tokens" class="hidden space-y-6">
+      <div class="text-center max-w-xl mx-auto space-y-1">
+        <h2 class="text-2xl font-extrabold text-white">Design Tokens & Palette</h2>
+        <p class="text-sm text-qyic-muted">Strict color specification to ensure consistent themes across Web & Flutter Native.</p>
+      </div>
+
+      <!-- PALETTE GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div class="p-4 rounded-xl bg-[#0F172A] border border-qyic-border space-y-2">
+          <div class="text-xs font-bold text-white">Primary Base</div>
+          <div class="text-[11px] font-mono text-qyic-muted">#0F172A</div>
+          <div class="text-[10px] text-qyic-muted">Background Shell</div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#1E293B] border border-qyic-border space-y-2">
+          <div class="text-xs font-bold text-white">Surface Base</div>
+          <div class="text-[11px] font-mono text-qyic-muted">#1E293B</div>
+          <div class="text-[10px] text-qyic-muted">Cards & Containers</div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#6366F1] space-y-2 text-white">
+          <div class="text-xs font-bold">Accent Primary</div>
+          <div class="text-[11px] font-mono">#6366F1</div>
+          <div class="text-[10px] opacity-80">Primary Buttons & Nav</div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#F59E0B] space-y-2 text-qyic-base">
+          <div class="text-xs font-bold">XP / Streak</div>
+          <div class="text-[11px] font-mono font-bold">#F59E0B</div>
+          <div class="text-[10px] font-semibold">Gamification HUD</div>
+        </div>
+        <div class="p-4 rounded-xl bg-[#10B981] space-y-2 text-qyic-base">
+          <div class="text-xs font-bold">Success / Easy</div>
+          <div class="text-[11px] font-mono font-bold">#10B981</div>
+          <div class="text-[10px] font-semibold">FSRS Easy Grade</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- MODAL: DECK DETAILS & .qdeck INSPECTOR    -->
+  <!-- ========================================== -->
+  <div id="deck-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-qyic-surface border border-qyic-border rounded-2xl max-w-lg w-full p-6 space-y-5 relative shadow-2xl">
+      
+      <div class="flex items-center justify-between border-b border-qyic-border pb-3">
+        <div class="flex items-center space-x-2">
+          <i data-lucide="package-check" class="w-5 h-5 text-qyic-primary"></i>
+          <h3 class="font-bold text-white text-base">.qdeck Binary File Spec</h3>
+        </div>
+        <button onclick="closeDeckModal()" class="text-qyic-muted hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3 rounded-xl bg-qyic-base border border-qyic-border font-mono text-qyic-muted space-y-1">
+          <div class="text-white font-bold">rust_axum_architecture.qdeck</div>
+          <div>Container: zip (Protobuf payload + media)</div>
+          <div>Schema: shared/proto/deck.proto</div>
+          <div>Checksum: sha256-e3b0c44298fc1c149afbf4...</div>
+        </div>
+
+        <div class="space-y-2">
+          <span class="font-bold text-white">Deck Metadata:</span>
+          <ul class="space-y-1 text-qyic-muted">
+            <li class="flex justify-between"><span>Title:</span> <strong class="text-white">Rust Systems & Async</strong></li>
+            <li class="flex justify-between"><span>Cards Count:</span> <strong class="text-white">140 Quizzes</strong></li>
+            <li class="flex justify-between"><span>Media Assets:</span> <strong class="text-white">12 WebP images, 4 OGG audios</strong></li>
+            <li class="flex justify-between"><span>FSRS Parameters:</span> <strong class="text-white">v4 Default Weights</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-2 flex justify-end space-x-3">
+        <button onclick="closeDeckModal()" class="px-4 py-2 rounded-xl bg-qyic-base border border-qyic-border text-qyic-text font-medium text-xs">
+          Close Inspector
+        </button>
+        <button onclick="closeDeckModal(); switchMode('formats');" class="px-4 py-2 rounded-xl bg-qyic-primary text-white font-bold text-xs hover:bg-qyic-primaryHover">
+          Import & Study Now
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mode Switcher Logic
+    function switchMode(mode) {
+      const modes = ['web', 'mobile', 'formats', 'tokens'];
+      modes.forEach(m => {
+        document.getElementById(`view-${m}`).classList.add('hidden');
+        document.getElementById(`btn-mode-${m}`).className = 'flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all text-qyic-muted hover:text-qyic-text';
+      });
+
+      document.getElementById(`view-${mode}`).classList.remove('hidden');
+      document.getElementById(`btn-mode-${mode}`).className = 'flex items-center space-x-2 px-3.5 py-1.5 rounded-lg transition-all bg-qyic-primary text-white font-semibold shadow-sm';
+    }
+
+    // Web Sidebar Tab Switcher
+    function showWebTab(tab) {
+      if (tab === 'dashboard') {
+        document.getElementById('tab-web-dashboard').classList.remove('hidden');
+        document.getElementById('tab-web-study').classList.add('hidden');
+        document.getElementById('nav-dash').className = 'flex items-center space-x-3 px-3 py-2 rounded-xl bg-qyic-primary text-white font-medium text-sm transition-all shadow-sm';
+        document.getElementById('nav-study').className = 'flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all';
+      } else if (tab === 'study') {
+        document.getElementById('tab-web-dashboard').classList.add('hidden');
+        document.getElementById('tab-web-study').classList.remove('hidden');
+        document.getElementById('nav-study').className = 'flex items-center space-x-3 px-3 py-2 rounded-xl bg-qyic-primary text-white font-medium text-sm transition-all shadow-sm';
+        document.getElementById('nav-dash').className = 'flex items-center space-x-3 px-3 py-2 rounded-xl text-qyic-muted hover:bg-qyic-base hover:text-qyic-text font-medium text-sm transition-all';
+      }
+    }
+
+    // Online / Offline Sync Simulator
+    let isOnline = true;
+    function toggleSyncState() {
+      isOnline = !isOnline;
+      const btn = document.getElementById('sync-toggle');
+      const text = document.getElementById('sync-text');
+
+      if (isOnline) {
+        btn.className = 'flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium hover:bg-emerald-500/20 transition-all';
+        text.innerText = 'Online & Synced';
+      } else {
+        btn.className = 'flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-medium hover:bg-amber-500/20 transition-all';
+        text.innerText = 'Offline (3 Delta Queue)';
+      }
+    }
+
+    // Modal Controls
+    function openDeckModal() {
+      document.getElementById('deck-modal').classList.remove('hidden');
+    }
+    function closeDeckModal() {
+      document.getElementById('deck-modal').classList.add('hidden');
+    }
+
+    // Multiple Choice Option Selection
+    function selectMcOption(element, isCorrect) {
+      document.querySelectorAll('.mc-btn').forEach(btn => {
+        btn.className = 'mc-btn p-4 rounded-xl bg-qyic-base border border-qyic-border hover:border-qyic-primary transition-all flex items-center justify-between group';
+      });
+
+      if (isCorrect) {
+        element.className = 'mc-btn p-4 rounded-xl bg-emerald-500/10 border-2 border-emerald-500 text-emerald-400 transition-all flex items-center justify-between font-bold shadow-glow-emerald';
+      } else {
+        element.className = 'mc-btn p-4 rounded-xl bg-rose-500/10 border-2 border-rose-500 text-rose-400 transition-all flex items-center justify-between font-bold';
+      }
+    }
+
+    // Rate FSRS Session
+    function rateFsrs(grade) {
+      alert(`FSRS Spaced Repetition interval recorded: [${grade.toUpperCase()}]. Next review calculated automatically by FSRS scheduling algorithm.`);
+    }
+
+    // Format Showcase Tabs
+    function showQuizFormat(fmt) {
+      const formats = ['mc', 'fill', 'match', 'tf'];
+      formats.forEach(f => {
+        document.getElementById(`fmt-${f}`).classList.add('hidden');
+        document.getElementById(`fmt-tab-${f}`).className = 'px-4 py-2 rounded-xl text-qyic-muted hover:text-white transition-all';
+      });
+
+      document.getElementById(`fmt-${fmt}`).classList.remove('hidden');
+      document.getElementById(`fmt-tab-${fmt}`).className = 'px-4 py-2 rounded-xl bg-qyic-primary text-white shadow-sm transition-all';
+    }
+
+    // Fill-in-the-Blank Checker
+    function checkFillAnswer() {
+      const input = document.getElementById('fill-input').value.trim().toLowerCase();
+      const feedback = document.getElementById('fill-feedback');
+      feedback.classList.remove('hidden');
+
+      if (input.includes('protocol') || input.includes('protobuf') || input.includes('pb')) {
+        feedback.className = 'p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold';
+        feedback.innerText = 'Correct! Protocol Buffers serialization enables cross-platform Rust/Dart/TS fast parsing.';
+      } else {
+        feedback.className = 'p-3 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold';
+        feedback.innerText = 'Incorrect. Try "Protocol Buffers" or "Protobuf".';
+      }
+    }
+
+    // Matching Pairs Selector
+    let selectedTile = null;
+    function selectMatchTile(tile) {
+      if (!selectedTile) {
+        selectedTile = tile;
+        tile.className = 'match-tile p-3 bg-indigo-500/20 border-2 border-qyic-primary rounded-xl text-center font-bold text-indigo-300 transition-all';
+      } else {
+        if (selectedTile !== tile) {
+          tile.className = 'match-tile p-3 bg-emerald-500/20 border-2 border-emerald-500 rounded-xl text-center font-bold text-emerald-300 transition-all';
+          selectedTile.className = 'match-tile p-3 bg-emerald-500/20 border-2 border-emerald-500 rounded-xl text-center font-bold text-emerald-300 transition-all';
+          selectedTile = null;
+        } else {
+          tile.className = 'match-tile p-3 bg-qyic-base border border-qyic-border rounded-xl text-center font-semibold hover:border-indigo-500 cursor-pointer transition-all';
+          selectedTile = null;
+        }
+      }
+    }
+
+    // Format Answer Feedback Toggle
+    function toggleAnswerFeedback(el, isCorrect) {
+      if (isCorrect) {
+        el.className = "p-3.5 rounded-xl bg-emerald-500/10 border-2 border-emerald-500 text-emerald-400 font-bold transition-all flex justify-between items-center";
+      } else {
+        el.className = "p-3.5 rounded-xl bg-rose-500/10 border-2 border-rose-500 text-rose-400 font-bold transition-all flex justify-between items-center";
+      }
+    }
+  </script>
+</body>
+</html>
