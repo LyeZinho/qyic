@@ -1,0 +1,9 @@
+# Copy to android/key.properties (git-ignored) and fill in your own release key.
+# Create the keystore once, keep it outside the repository, and back it up:
+#   keytool -genkey -v -keystore ~/keys/qyic-release.jks -keyalg RSA -keysize 2048 \
+#     -validity 10000 -alias qyic
+# storeFile is resolved relative to the android/ folder; an absolute path is fine.
+storePassword=CHANGE_ME
+keyPassword=CHANGE_ME
+keyAlias=qyic
+storeFile=/absolute/path/to/qyic-release.jks
