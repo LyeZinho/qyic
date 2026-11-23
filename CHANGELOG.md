@@ -7,21 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Android release readiness: release builds are signed with a key from
-  `mobile/android/key.properties` and fail without one; see
-  [docs/release-android.md](docs/release-android.md).
-- Android launcher icon (adaptive, Qyic background and bolt) and matching splash.
-
 ### Changed
-
-- Android application id is `com.qyic.app` (was the template `com.example.qyic`).
-- Study reminders create their Android notification channel explicitly, so they
-  show on Android 8+ even before the first notification.
-- The bottom navigation bar clears the system gesture bar (edge-to-edge).
-- Dependencies refreshed within their declared version ranges (`pub upgrade`).
-
 
 - Deck format spec: document many items per deck, primary quiz modes (select option,
   true/false, flashcards), and per-deck statistics vs shareable `.qdeck` content.
@@ -96,5 +82,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile UI polish: bundled Space Grotesk and JetBrains Mono fonts (OFL),
   refined component themes, quiz hints, and a navigation rail with capped
   content width on wide screens.
+
+## [Android 0.1.0] - 2026-11-23
+
+First Android release (`mobile` version `0.1.0+1`, application id `com.qyic.app`).
+
+### Added
+
+- Android release readiness: release builds are signed with a key from
+  `mobile/android/key.properties` and fail without one; see
+  [docs/release-android.md](docs/release-android.md).
+- Android launcher icon (adaptive, Qyic background and bolt) and matching splash.
+
+### Changed
+
+- Android application id is `com.qyic.app` (was the template `com.example.qyic`).
+- Study reminders create their Android notification channel explicitly, so they
+  show on Android 8+ even before the first notification.
+- The bottom navigation bar clears the system gesture bar (edge-to-edge).
+- Dependencies refreshed within their declared version ranges (`pub upgrade`).
 
 [Unreleased]: https://github.com/LyeZinho/qyic/compare/HEAD...HEAD
