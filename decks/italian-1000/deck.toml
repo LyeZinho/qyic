@@ -1,0 +1,12 @@
+[deck]
+id = "5e8e0333-bb11-4ac2-9875-1faaa5f3e7a3"
+title = "Italian — First 1000 Words"
+description = "The 1000 most useful Italian words for beginners, each with an everyday example sentence and its English translation."
+author = "Qyic"
+locale = "it"
+version = 2
+created_at = "2026-10-31T00:00:00Z"
+
+[vocabulary]
+choices = 4
+matching_size = 5

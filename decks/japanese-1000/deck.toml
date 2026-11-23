@@ -1,0 +1,12 @@
+[deck]
+id = "527dbb66-ef3c-42e1-b99e-427262f5a4b9"
+title = "Japanese — First 1000 Words"
+description = "The 1000 most useful Japanese words for beginners, with kana readings, romaji, and an everyday example sentence for each. Answers accept kanji, kana, or romaji."
+author = "Qyic"
+locale = "ja"
+version = 2
+created_at = "2026-10-31T00:00:00Z"
+
+[vocabulary]
+choices = 4
+matching_size = 5
