@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
@@ -217,9 +217,9 @@ class _RunRow extends StatelessWidget {
                 Text(run.name, style: textTheme.titleMedium),
                 Text(
                   [
-                    DateFormat.MMMd(
-                      l10n.localeName,
-                    ).add_jm().format(run.startedAt.toLocal()),
+                    DateFormat.MMMd(l10n.localeName)
+                        .add_jm()
+                        .format(run.startedAt.toLocal()),
                     l10n.examCorrectOf(run.correctCount, run.questionCount),
                     if (run.endReason != ExamEndReason.completed)
                       run.endReason.label(l10n),

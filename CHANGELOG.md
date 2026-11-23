@@ -101,5 +101,8 @@ First Android release (`mobile` version `0.1.0+1`, application id `com.qyic.app`
   show on Android 8+ even before the first notification.
 - The bottom navigation bar clears the system gesture bar (edge-to-edge).
 - Dependencies refreshed within their declared version ranges (`pub upgrade`).
+- Mobile imports use `material_ui` and `cupertino_ui` instead of the deprecated
+  `flutter/material.dart` and `flutter/cupertino.dart` entry points (Flutter 3.50 analyzer).
+  The package requires Dart 3.13, so the app's SDK constraint is `^3.13.0`.
 
 [Unreleased]: https://github.com/LyeZinho/qyic/compare/HEAD...HEAD

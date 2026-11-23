@@ -138,8 +138,7 @@ DeckContent starterDeck(DateTime now) {
         'a3f0e1d2-0010-4b6a-8c1e-5d2f3a4b6c10',
         QuizType.matching,
         'Match each rating to when you would use it',
-        explanation:
-            'Ratings feed FSRS directly. Be honest: the schedule adapts to you.',
+        explanation: 'Ratings feed FSRS directly. Be honest: the schedule adapts to you.',
         options: const [
           QuizOption(id: 'pair_1', prompt: 'Again', text: 'I forgot it'),
           QuizOption(id: 'pair_2', prompt: 'Good', text: 'Recalled normally'),

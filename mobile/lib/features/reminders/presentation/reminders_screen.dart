@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/formatting.dart';
@@ -204,9 +204,8 @@ class _ReminderCard extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 l10n.remindersNoDays,
-                style: Theme.of(
-                  context,
-                ).textTheme.bodySmall?.copyWith(color: QyicColors.orange),
+                style: Theme.of(context).textTheme.bodySmall
+                    ?.copyWith(color: QyicColors.orange),
               ),
             ],
           ],

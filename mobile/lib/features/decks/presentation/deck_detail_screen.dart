@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/formatting.dart';
@@ -417,9 +417,8 @@ class _MetricTile extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               label,
-              style: Theme.of(
-                context,
-              ).textTheme.bodyMedium?.copyWith(fontSize: 12),
+              style: Theme.of(context).textTheme.bodyMedium
+                  ?.copyWith(fontSize: 12),
             ),
           ],
         ),

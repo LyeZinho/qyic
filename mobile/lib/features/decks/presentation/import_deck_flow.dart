@@ -1,5 +1,5 @@
 import 'package:file_selector/file_selector.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/theme/qyic_colors.dart';
@@ -106,9 +106,8 @@ class _ImportDialogState extends State<_ImportDialog> {
     }
     if (!mounted) return;
     final deck = preview.package.content.deck;
-    Navigator.of(
-      context,
-    ).pop(_ImportResult(deck.id, deck.title, wasUpdate: preview.isUpdate));
+    Navigator.of(context)
+        .pop(_ImportResult(deck.id, deck.title, wasUpdate: preview.isUpdate));
   }
 
   @override

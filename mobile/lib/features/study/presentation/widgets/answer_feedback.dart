@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/theme/qyic_colors.dart';
 import '../../../../core/widgets/qyic_shared_widgets.dart';
@@ -73,9 +73,8 @@ class QuizHintLine extends StatelessWidget {
           Expanded(
             child: Text(
               hint,
-              style: Theme.of(
-                context,
-              ).textTheme.bodyMedium?.copyWith(fontStyle: FontStyle.italic),
+              style: Theme.of(context).textTheme.bodyMedium
+                  ?.copyWith(fontStyle: FontStyle.italic),
             ),
           ),
         ],

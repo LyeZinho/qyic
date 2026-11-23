@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/formatting.dart';
@@ -30,9 +30,9 @@ class ProfileScreen extends ConsumerWidget {
     final events = progress?.totalReviews ?? 0;
     final name = settings?.displayName ?? l10n.meDefaultName;
 
-    void open(Widget screen) => Navigator.of(
-      context,
-    ).push(MaterialPageRoute<void>(builder: (_) => screen));
+    void open(Widget screen) =>
+        Navigator.of(context)
+            .push(MaterialPageRoute<void>(builder: (_) => screen));
 
     return SafeArea(
       child: QyicContentWidth(

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 import '../../../../core/widgets/qyic_primary_button.dart';
 import '../../../../core/widgets/qyic_shared_widgets.dart';

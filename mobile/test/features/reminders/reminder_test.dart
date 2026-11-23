@@ -157,9 +157,8 @@ void main() {
         expect(text.title, 'Time to study');
 
         // Changing the language re-plans with translated text.
-        final italian = lookupAppLocalizations(
-          const Locale('it'),
-        ).reminderTitle;
+        final italian = lookupAppLocalizations(const Locale('it'))
+            .reminderTitle;
         await container.read(settingsRepositoryProvider).setLanguageTag('it');
         for (var attempt = 0; attempt < 100; attempt++) {
           if (scheduler.applied.last.$2.title == italian) break;

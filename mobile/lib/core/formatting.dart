@@ -41,9 +41,8 @@ String formatBytes(AppLocalizations l10n, int bytes) {
 
 /// Local wall-clock time ("07:30" or "7:30 AM" depending on the locale).
 String formatMinuteOfDay(AppLocalizations l10n, int minuteOfDay) =>
-    DateFormat.jm(
-      l10n.localeName,
-    ).format(DateTime(2000, 1, 1, minuteOfDay ~/ 60, minuteOfDay % 60));
+    DateFormat.jm(l10n.localeName)
+        .format(DateTime(2000, 1, 1, minuteOfDay ~/ 60, minuteOfDay % 60));
 
 /// Short weekday name for `DateTime.monday` … `DateTime.sunday`.
 String formatWeekday(AppLocalizations l10n, int weekday) =>
