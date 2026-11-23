@@ -56,7 +56,9 @@ abstract final class QyicTheme {
         thickness: 1,
         space: 1,
       ),
-      splashFactory: InkSparkle.splashFactory,
+      // Ripple rather than the InkSparkle fragment shader, which is suspected
+      // of leaving grey, empty regions on Android (app bars, bottom bar).
+      splashFactory: InkRipple.splashFactory,
       appBarTheme: const AppBarTheme(
         backgroundColor: QyicColors.background,
         foregroundColor: QyicColors.textPrimary,

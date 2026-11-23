@@ -13,13 +13,14 @@ val releaseKeystoreProperties = Properties().apply {
     if (releaseKeystoreFile.exists()) releaseKeystoreFile.inputStream().use { load(it) }
 }
 
-// Fail fast instead of producing a release build signed with the debug key.
+// Without android/key.properties the release build is signed with the debug
+// key. That is enough for APKs downloaded from GitHub (sideloading), but the
+// debug key differs between machines and CI runners, so a new APK will not
+// install over one signed with another key. The Play Store needs the upload
+// key (see docs/release-android.md).
 val releaseRequested = gradle.startParameter.taskNames.any { it.contains("Release", ignoreCase = true) }
 if (releaseRequested && !releaseKeystoreFile.exists()) {
-    throw GradleException(
-        "Release build needs a signing key: create android/key.properties " +
-            "(see android/key.properties.example and docs/release-android.md).",
-    )
+    logger.warn("No android/key.properties: signing the release build with the debug key.")
 }
 
 android {
@@ -57,7 +58,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.findByName("release")
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
 }
