@@ -1,0 +1,77 @@
+# Builds the Android app and attaches the APK and App Bundle to a GitHub
+# release. Runs when an `android-v*` tag is pushed, or manually for an
+# existing tag (Actions → Android release → Run workflow).
+#
+# Signing: CI has no android/key.properties, so the release APK is signed with
+# the runner's debug key. Installs of a newer APK over an older one need the
+# same key; see docs/release-android.md before relying on in-place updates.
+name: Android release
+
+on:
+  push:
+    tags:
+      - "android-v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing android-v* tag to build and attach to"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: android-release-${{ github.event.inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Build and publish
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.ref }}
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: mobile
+        run: flutter pub get
+
+      - name: Analyze and test
+        working-directory: mobile
+        run: |
+          flutter analyze
+          flutter test
+
+      - name: Build APK and App Bundle
+        working-directory: mobile
+        run: |
+          flutter build apk --release
+          flutter build appbundle --release
+
+      - name: Publish to the GitHub release
+        working-directory: mobile
+        run: |
+          VERSION="${TAG#android-v}"
+          APK="qyic-${VERSION}.apk"
+          AAB="qyic-${VERSION}.aab"
+          cp build/app/outputs/flutter-apk/app-release.apk "$APK"
+          cp build/app/outputs/bundle/release/app-release.aab "$AAB"
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --title "Qyic Android ${VERSION}" \
+              --notes "Android build for ${TAG}. See CHANGELOG.md for changes."
+          fi
+          gh release upload "$TAG" "$APK" "$AAB" --clobber
