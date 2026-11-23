@@ -1,0 +1,716 @@
+{
+  "@@locale": "en",
+  "appTitle": "Qyic",
+  "actionBack": "Back",
+  "actionBackHome": "Back home",
+  "actionCancel": "Cancel",
+  "actionClose": "Close",
+  "actionContinue": "Continue",
+  "actionCreate": "Create",
+  "actionDelete": "Delete",
+  "actionDone": "Done",
+  "actionEdit": "Edit",
+  "actionRemove": "Remove",
+  "actionSave": "Save",
+  "errorGeneric": "Something went wrong.\n{error}",
+  "@errorGeneric": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "navHome": "Home",
+  "navLibrary": "Library",
+  "navMe": "Me",
+  "cardCount": "{count, plural, =1{1 card} other{{count} cards}}",
+  "@cardCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "quizCount": "{count, plural, =1{1 quiz} other{{count} quizzes}}",
+  "@quizCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "xpAmount": "+{xp} XP",
+  "@xpAmount": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "xpProgress": "{xp} / {total} XP",
+  "@xpProgress": {
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "levelShort": "Lv {level}",
+  "@levelShort": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "levelProgress": "Level {level} · {xp} / {total} XP",
+  "@levelProgress": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "xp": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUnlocked": "Level {level} unlocked",
+  "@levelUnlocked": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{minutes} min",
+  "@durationMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationSeconds": "{seconds} s",
+  "@durationSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalMinutes": "{count} min",
+  "@intervalMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalHours": "{count} h",
+  "@intervalHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalDays": "{count} d",
+  "@intervalDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "intervalMonths": "{value} mo",
+  "@intervalMonths": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "intervalYears": "{value} y",
+  "@intervalYears": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "quizTypeMultipleChoice": "Multiple choice",
+  "quizTypeFillInTheBlank": "Fill in the blank",
+  "quizTypeMatching": "Matching",
+  "quizTypeTrueFalse": "True / False",
+  "quizTypeFlashcard": "Flashcard",
+  "ratingAgain": "Again",
+  "ratingHard": "Hard",
+  "ratingGood": "Good",
+  "ratingEasy": "Easy",
+  "ratingQuestion": "How well did you recall?",
+  "ratingReviewAgainIn": "Review again in {interval}",
+  "@ratingReviewAgainIn": {
+    "placeholders": {
+      "interval": {
+        "type": "String"
+      }
+    }
+  },
+  "greetingMorning": "Good morning",
+  "greetingAfternoon": "Good afternoon",
+  "greetingEvening": "Good evening",
+  "homeReady": "Ready to study?",
+  "homeSavedOnDevice": "Saved on device",
+  "homeTodaysQueue": "Today's queue",
+  "homeAllCaughtUp": "All caught up",
+  "homeQueueEstimate": "About {minutes} min · {decks, plural, =1{1 deck} other{{decks} decks}}",
+  "@homeQueueEstimate": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "decks": {
+        "type": "int"
+      }
+    }
+  },
+  "homeStartReview": "Start review",
+  "homeExamTeaser": "Timed, focused practice that counts towards your schedule",
+  "homeYourDecks": "Your decks",
+  "librarySearch": "Search your decks",
+  "libraryFilterAll": "All",
+  "libraryFilterDue": "To study",
+  "libraryEmpty": "No decks yet. Create one or import a .qdeck file.",
+  "libraryNoMatch": "No decks match.",
+  "deckNew": "New deck",
+  "deckEdit": "Edit deck",
+  "deckFieldTitle": "Title",
+  "deckFieldDescription": "Description (optional)",
+  "deckDueCount": "{count} due",
+  "@deckDueCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckNewCount": "{count} new",
+  "@deckNewCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckDone": "Done",
+  "deckBy": "by {author}",
+  "@deckBy": {
+    "placeholders": {
+      "author": {
+        "type": "String"
+      }
+    }
+  },
+  "deckGone": "This deck no longer exists.",
+  "deckDeleteTitle": "Delete “{title}”?",
+  "@deckDeleteTitle": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "deckDeleteBody": "The deck and its quizzes are removed from this device. Your review history is kept.",
+  "deckMetricDue": "Due",
+  "deckMetricRetention": "Retention",
+  "deckMetricMature": "Mature",
+  "deckQuizTypes": "Quiz types",
+  "deckQuizzes": "Quizzes",
+  "deckAddQuiz": "Add quiz",
+  "deckNoQuizzes": "No quizzes yet. Add the first one.",
+  "deckSyncNote": "Your progress on this deck syncs as review events. The deck itself is never re-uploaded.",
+  "deckStudy": "Study",
+  "deckNothingToStudy": "Nothing to study now",
+  "deckStudyCards": "{count, plural, =1{Study 1 card} other{Study {count} cards}}",
+  "@deckStudyCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "quizDeleteTitle": "Delete this quiz?",
+  "quizDeleteTooltip": "Delete quiz",
+  "quizEditorNew": "New quiz",
+  "quizEditorEdit": "Edit quiz",
+  "quizEditorType": "Type",
+  "quizEditorQuestion": "Question",
+  "quizEditorStatement": "Statement",
+  "quizEditorFront": "Front",
+  "quizEditorSentence": "Sentence — mark the blank with ___",
+  "quizEditorSentenceHint": "A .qdeck stores quizzes serialized with ___ inside a ZIP.",
+  "quizEditorInstructions": "Instructions",
+  "quizEditorInstructionsHint": "Match each term to its definition",
+  "quizEditorHint": "Context (optional)",
+  "quizEditorHintHint": "Shown under the question, e.g. a translation",
+  "quizEditorBack": "Back",
+  "quizEditorExplanation": "Explanation (shown after answering)",
+  "quizEditorOptions": "Options — select the correct one",
+  "quizEditorOptionN": "Option {number}",
+  "@quizEditorOptionN": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "quizEditorAddOption": "Add option",
+  "quizEditorStatementIs": "The statement is",
+  "quizEditorAccepted": "Accepted answers",
+  "quizEditorAnswerN": "Answer {number}",
+  "@quizEditorAnswerN": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "quizEditorAddAnswer": "Add accepted answer",
+  "quizEditorPairs": "Pairs",
+  "quizEditorTerm": "Term",
+  "quizEditorMatch": "Match",
+  "quizEditorAddPair": "Add pair",
+  "quizEditorSave": "Save quiz",
+  "issueEmptyQuestion": "The question must not be empty.",
+  "issueEmptyFront": "The front must not be empty.",
+  "issueDuplicateOptionIds": "Option ids must be unique.",
+  "issueTooFewOptions": "Add at least two options.",
+  "issueEmptyOptions": "Options must not be empty.",
+  "issueDuplicateOptions": "Options must be distinct.",
+  "issueNotOneCorrect": "Mark exactly one correct option.",
+  "issueTrueFalseOptions": "True/false needs the options “true” and “false”.",
+  "issueTrueFalseNoAnswer": "Choose whether the statement holds.",
+  "issueEmptyBack": "The back must not be empty.",
+  "issueFlashcardOptions": "Flashcards have no options.",
+  "issueNotOneBlank": "Mark exactly one blank with ___ in the sentence.",
+  "issueNoAnswers": "Add at least one accepted answer.",
+  "issueEmptyAnswers": "Accepted answers must not be empty.",
+  "issueAnswerNotCorrect": "Every accepted answer must be marked correct.",
+  "issueTooFewPairs": "Add at least two pairs.",
+  "issueEmptyPairSide": "Both sides of every pair must be filled in.",
+  "issueDuplicatePairs": "Terms and matches must be distinct.",
+  "studyEnd": "End session",
+  "studySaveFailed": "Could not save the review: {error}",
+  "@studySaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "studyAllCaughtUp": "ALL CAUGHT UP",
+  "studyNothingDue": "Nothing is due right now.",
+  "studyNothingDueBody": "Come back later, add quizzes to a deck, or try exam mode.",
+  "feedbackCorrect": "Correct.",
+  "feedbackWrong": "Not quite.",
+  "choiceAnswer": "Answer: {answer}.",
+  "@choiceAnswer": {
+    "placeholders": {
+      "answer": {
+        "type": "String"
+      }
+    }
+  },
+  "trueFalseTrue": "True",
+  "trueFalseFalse": "False",
+  "trueFalseExplainAfter": "Answer to see the explanation",
+  "fillPrompt": "Complete the sentence",
+  "fillTypeAnswer": "Type the answer",
+  "fillAccepted": "Accepted: {answers}.",
+  "@fillAccepted": {
+    "placeholders": {
+      "answers": {
+        "type": "String"
+      }
+    }
+  },
+  "fillLetterHint": "Hint: starts with “{letter}”",
+  "@fillLetterHint": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "fillShowHint": "Show hint",
+  "fillCheck": "Check answer",
+  "flashcardBack": "Back",
+  "flashcardRecall": "Recall the answer, then tap to reveal.",
+  "flashcardShowAnswer": "Show answer",
+  "matchingAllSet": "All pairs set. Tap a tile to change it.",
+  "matchingInstructions": "Tap a term, then its match. {remaining} of {total} pairs left.",
+  "@matchingInstructions": {
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "matchingCorrectPairs": "Correct pairs: {pairs}.",
+  "@matchingCorrectPairs": {
+    "placeholders": {
+      "pairs": {
+        "type": "String"
+      }
+    }
+  },
+  "matchingCheck": "Check pairs",
+  "sessionComplete": "SESSION COMPLETE",
+  "sessionCards": "{count, plural, =1{1 card.} other{{count} cards.}}",
+  "@sessionCards": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionNiceRun": "Nice run.",
+  "sessionKeepGoing": "Keep going.",
+  "sessionEventsSaved": "{count, plural, =1{1 review event saved on device} other{{count} review events saved on device}}",
+  "@sessionEventsSaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statAccuracy": "Accuracy",
+  "statXpEarned": "XP earned",
+  "statDayStreak": "Day streak",
+  "statTime": "Time",
+  "examTitle": "Exam mode",
+  "examIntro": "Intense, timed practice. Cards are picked even when they are not due, and every answer is a real review that updates your schedule.",
+  "examQuickName": "Quick exam",
+  "examStart": "Start exam",
+  "examPresets": "Presets",
+  "examNewPreset": "New preset",
+  "examEditPreset": "Edit preset",
+  "examNoPresets": "No presets yet. Save the setups you use often.",
+  "examRecent": "Recent results",
+  "examNoRuns": "No exams taken yet.",
+  "examQuestionCount": "{count, plural, =1{1 question} other{{count} questions}}",
+  "@examQuestionCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examPerQuestion": "{seconds} s each",
+  "@examPerQuestion": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "examDeckCount": "{count, plural, =1{1 deck} other{{count} decks}}",
+  "@examDeckCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examCorrectOf": "{correct} of {total} correct",
+  "@examCorrectOf": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examUntimed": "Untimed",
+  "examSelectionWeakest": "Weakest first",
+  "examSelectionWeakestDetail": "Cards you are most likely to forget, by predicted recall.",
+  "examSelectionRandom": "Random",
+  "examSelectionRandomDetail": "A shuffled mix of everything in scope.",
+  "examSelectionDueFirst": "Due first",
+  "examSelectionDueFirstDetail": "Overdue cards, then the ones coming up next.",
+  "examEndCompleted": "Completed",
+  "examEndTimeUp": "Time's up",
+  "examEndStopped": "Stopped early",
+  "examFieldName": "Name",
+  "examFieldDecks": "Decks",
+  "examAllDecks": "All decks",
+  "examFieldSelection": "Card selection",
+  "examFieldQuestions": "Questions",
+  "examFieldTimeLimit": "Time limit",
+  "examFieldTimePerQuestion": "Time per question",
+  "examFieldQuizTypes": "Quiz types",
+  "examFieldIncludeNew": "Include new cards",
+  "examFieldIncludeNewDetail": "Also ask cards you have never studied.",
+  "examFieldAutoRate": "Rate automatically",
+  "examFieldAutoRateDetail": "Wrong is Again, fast and right is Good, slow and right is Hard. Flashcards still ask you.",
+  "examFieldAllowHints": "Allow hints",
+  "examFieldAllowHintsDetail": "Offer the first-letter hint on fill-in-the-blank quizzes.",
+  "examAffectsSchedule": "Exam answers are real reviews: they move cards in your schedule and earn XP.",
+  "examIssueEmptyName": "Give the preset a name.",
+  "examIssueNoQuizTypes": "Pick at least one quiz type.",
+  "examIssueQuestionCount": "Choose between {min} and {max} questions.",
+  "@examIssueQuestionCount": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "examDeleteTitle": "Delete preset?",
+  "examDeleteBody": "“{name}” will be removed. Past results are kept.",
+  "@examDeleteBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "examPill": "EXAM",
+  "examStop": "Stop exam",
+  "examStopTitle": "Stop the exam?",
+  "examStopBody": "Answers so far are kept and already count towards your schedule.",
+  "examKeepGoing": "Keep going",
+  "examQuestionTimeUp": "Time's up.",
+  "examTimeUpBanner": "The exam time is over. This was the last question.",
+  "examRatedAs": "Rated {rating}",
+  "@examRatedAs": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "examNextQuestion": "Next question",
+  "examSeeResults": "See results",
+  "examAnswered": "Answered",
+  "examUnanswered": "Unanswered",
+  "examMissed": "To review ({count})",
+  "@examMissed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examReviewsSaved": "{count, plural, =0{No reviews were recorded.} =1{1 review saved on device.} other{{count} reviews saved on device.}}",
+  "@examReviewsSaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examRetake": "Retake",
+  "examNoCards": "No cards to ask.",
+  "examNoCardsBody": "There are no cards in these decks with the selected quiz types.",
+  "examNoCardsBodyNew": "Only studied cards are asked. Study some cards first, or enable “Include new cards” in a preset.",
+  "remindersTitle": "Reminders",
+  "remindersIntro": "Get a nudge to study at the times that suit you. Reminders are set on this device only.",
+  "remindersAdd": "Add reminder",
+  "remindersEmpty": "No reminders yet.",
+  "remindersNoDays": "Pick at least one day, or this reminder never fires.",
+  "remindersOff": "Off",
+  "remindersActiveCount": "{count, plural, =1{1 active} other{{count} active}}",
+  "@remindersActiveCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "remindersUnsupported": "This platform cannot schedule notifications. Your reminders are saved and apply on your phone.",
+  "remindersPermissionDenied": "Notifications are turned off for Qyic. Allow them in the system settings to receive reminders.",
+  "reminderTitle": "Time to study",
+  "reminderBody": "A few minutes now keeps your streak and your memory going.",
+  "reminderChannel": "Study reminders",
+  "prefTitle": "Preferences",
+  "prefSectionGeneral": "General",
+  "prefSectionStudy": "Study",
+  "prefSectionNotifications": "Notifications",
+  "prefSectionData": "Data",
+  "prefSectionAbout": "About",
+  "prefLanguage": "Language",
+  "prefSystem": "System default",
+  "prefName": "Your name",
+  "prefDailyGoal": "Daily goal",
+  "prefDailyGoalDetail": "Reviews per day that complete your goal.",
+  "prefNewCards": "New cards per day",
+  "prefNewCardsDetail": "Never-seen cards introduced each day, across all decks.",
+  "prefRetention": "Desired retention",
+  "prefRetentionDetail": "Higher retention means more frequent reviews. Applies to future reviews.",
+  "prefIntervals": "Show next intervals",
+  "prefIntervalsDetail": "Label rating buttons with when you will see the card again.",
+  "prefHaptics": "Haptic feedback",
+  "prefHapticsDetail": "Vibrate on answers and ratings.",
+  "prefStorage": "Storage used",
+  "prefLicenses": "Open-source licenses",
+  "meDefaultName": "Learner",
+  "meSummary": "Level {level} · {streak, plural, =1{1-day streak} other{{streak}-day streak}}",
+  "@meSummary": {
+    "placeholders": {
+      "level": {
+        "type": "int"
+      },
+      "streak": {
+        "type": "int"
+      }
+    }
+  },
+  "meSyncOff": "Sync not set up",
+  "meEventsOnDevice": "{count, plural, =1{1 event on device} other{{count} events on device}}",
+  "@meEventsOnDevice": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "meSyncBody": "Reviews are saved to this device first. Once sign-in and sync are available, queued review events upload; decks are never re-uploaded.",
+  "meSettings": "Settings",
+  "meMore": "More",
+  "meSyncUnavailable": "Sync now · not available yet",
+  "importAction": "Import .qdeck",
+  "importTitle": "Import .qdeck",
+  "importChecking": "Checking the file…",
+  "importNewBadge": "New deck",
+  "importUpdateBadge": "Update v{from} → v{to}",
+  "@importUpdateBadge": {
+    "placeholders": {
+      "from": {
+        "type": "int"
+      },
+      "to": {
+        "type": "int"
+      }
+    }
+  },
+  "importSpecVersion": "spec v{version}",
+  "@importSpecVersion": {
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "importDeckVersion": "deck v{version}",
+  "@importDeckVersion": {
+    "placeholders": {
+      "version": {
+        "type": "int"
+      }
+    }
+  },
+  "importCheckArchive": "Archive paths are safe",
+  "importCheckArchiveDetail": "no traversal",
+  "importCheckManifest": "Manifest is valid",
+  "importCheckChecksum": "SHA-256 matches",
+  "importCheckQuizRules": "Quizzes follow the rules",
+  "importChanges": "{added} new · {updated} changed · {removed} removed",
+  "@importChanges": {
+    "placeholders": {
+      "added": {
+        "type": "int"
+      },
+      "updated": {
+        "type": "int"
+      },
+      "removed": {
+        "type": "int"
+      }
+    }
+  },
+  "importSkipped": "{count, plural, =1{1 quiz uses a type this version cannot show and is skipped.} other{{count} quizzes use a type this version cannot show and are skipped.}}",
+  "@importSkipped": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importMediaUnsupported": "{count, plural, =1{1 media file is not shown yet.} other{{count} media files are not shown yet.}}",
+  "@importMediaUnsupported": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importProgressKeptTitle": "Your progress is kept.",
+  "importProgressKeptBody": "Installing only adds or updates content on this device; your review history stays as it is.",
+  "importInstallAction": "Install",
+  "importUpdateAction": "Update",
+  "importInstalled": "Installed “{title}”",
+  "@importInstalled": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "importUpdated": "Updated “{title}”",
+  "@importUpdated": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "importInstallFailed": "Could not install: {error}",
+  "@importInstallFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importFailedTitle": "This file can't be imported",
+  "deckManageCards": "Manage cards",
+  "deckModeMixed": "Mixed",
+  "deckModeQuizzes": "Quizzes only",
+  "deckModeFlashcards": "Flashcards only",
+  "deckModeExam": "Exam",
+  "deckModeMixedDetail": "Due and new cards of every type.",
+  "deckModeQuizzesDetail": "Questions only. No flashcards.",
+  "deckModeFlashcardsDetail": "Flashcards only.",
+  "deckModeExamDetailLarge": "Every type. Between 100 and {count} questions, chosen when you start.",
+  "@deckModeExamDetailLarge": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckModeExamDetailSmall": "Every type. {count} questions.",
+  "@deckModeExamDetailSmall": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deckExamStart": "Start exam"
+}
