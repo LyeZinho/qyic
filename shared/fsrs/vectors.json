@@ -1,0 +1,4372 @@
+{
+  "reference": "py-fsrs 6.3.2",
+  "fuzzing": false,
+  "scenarios": [
+    {
+      "name": "good_streak_on_time",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767431400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.971048263078135,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1768381800000,
+            "last_review_ms": 1767431400000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768381800000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 46.316858440073425,
+            "difficulty": 2.0974554287524403,
+            "due_ms": 1772356200000,
+            "last_review_ms": 1768381800000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772356200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 162.99981577472244,
+            "difficulty": 2.0905863426205262,
+            "due_ms": 1786439400000,
+            "last_review_ms": 1772356200000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1786439400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 497.8765551245907,
+            "difficulty": 2.083724125574744,
+            "due_ms": 1829466600000,
+            "last_review_ms": 1786439400000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1829466600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1347.918623024373,
+            "difficulty": 2.0768687707460076,
+            "due_ms": 1945933800000,
+            "last_review_ms": 1829466600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1945933800000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3298.6456099035986,
+            "difficulty": 2.0700202712721,
+            "due_ms": 2230967400000,
+            "last_review_ms": 1945933800000
+          }
+        }
+      ]
+    },
+    {
+      "name": "easy_from_new",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.2956,
+            "difficulty": 1.0,
+            "due_ms": 1767949200000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767949200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 65.62422616189994,
+            "difficulty": 1.0,
+            "due_ms": 1773651600000,
+            "last_review_ms": 1767949200000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1773651600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 396.7750233497581,
+            "difficulty": 1.0,
+            "due_ms": 1807952400000,
+            "last_review_ms": 1773651600000
+          }
+        }
+      ]
+    },
+    {
+      "name": "hard_steps",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 5.112170705601056,
+            "due_ms": 1767258330000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258330000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 6.7404595108297,
+            "due_ms": 1767258660000,
+            "last_review_ms": 1767258330000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258660000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 1.3358997622047517,
+            "difficulty": 6.728947420615708,
+            "due_ms": 1767259260000,
+            "last_review_ms": 1767258660000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767259260000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3771622371865915,
+            "difficulty": 6.717446842491931,
+            "due_ms": 1767345660000,
+            "last_review_ms": 1767259260000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767345660000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.806616926013447,
+            "difficulty": 7.806116616365843,
+            "due_ms": 1767604860000,
+            "last_review_ms": 1767345660000
+          }
+        }
+      ]
+    },
+    {
+      "name": "again_in_learning",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "due_ms": 1767258060000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258060000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.08335671711031604,
+            "difficulty": 8.806304468856837,
+            "due_ms": 1767258120000,
+            "last_review_ms": 1767258060000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258120000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.10314065007785231,
+            "difficulty": 8.792726533684817,
+            "due_ms": 1767258720000,
+            "last_review_ms": 1767258120000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258720000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.12584423732556518,
+            "difficulty": 8.77916217644797,
+            "due_ms": 1767345120000,
+            "last_review_ms": 1767258720000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767345120000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7789614697751799,
+            "difficulty": 8.76561138356836,
+            "due_ms": 1767431520000,
+            "last_review_ms": 1767345120000
+          }
+        }
+      ]
+    },
+    {
+      "name": "lapse_and_relearn",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767431400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.971048263078135,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1768381800000,
+            "last_review_ms": 1767431400000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768381800000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.53901253028147,
+            "difficulty": 7.389975788014609,
+            "due_ms": 1768382400000,
+            "last_review_ms": 1768381800000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768382400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.5718415897918614,
+            "difficulty": 7.377814181523433,
+            "due_ms": 1768555200000,
+            "last_review_ms": 1768382400000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768555200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.934768723890772,
+            "difficulty": 7.365664736638748,
+            "due_ms": 1768987200000,
+            "last_review_ms": 1768555200000
+          }
+        }
+      ]
+    },
+    {
+      "name": "late_reviews",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767863400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 21.42621174777395,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1769677800000,
+            "last_review_ms": 1767863400000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1771405800000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 115.97176934315644,
+            "difficulty": 2.0974554287524403,
+            "due_ms": 1781428200000,
+            "last_review_ms": 1771405800000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1781601000000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 269.3904955980506,
+            "difficulty": 4.739151024325689,
+            "due_ms": 1804842600000,
+            "last_review_ms": 1781601000000
+          }
+        }
+      ]
+    },
+    {
+      "name": "early_reviews",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258660000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1767431460000,
+            "last_review_ms": 1767258660000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767345060000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.323067566249242,
+            "difficulty": 2.0974554287524403,
+            "due_ms": 1767949860000,
+            "last_review_ms": 1767345060000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767949860000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 53.030295109452254,
+            "difficulty": 1.0,
+            "due_ms": 1772529060000,
+            "last_review_ms": 1767949860000
+          }
+        }
+      ]
+    },
+    {
+      "name": "same_day_review_phase",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.2956,
+            "difficulty": 1.0,
+            "due_ms": 1767949200000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767862860000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 36.05646700162628,
+            "difficulty": 1.0,
+            "due_ms": 1770973260000,
+            "last_review_ms": 1767862860000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1770973260000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 2.77213523685995,
+            "difficulty": 7.0269895692968385,
+            "due_ms": 1770973860000,
+            "last_review_ms": 1770973260000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1770973860000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 2.77213523685995,
+            "difficulty": 8.011605503110008,
+            "due_ms": 1770974760000,
+            "last_review_ms": 1770973860000
+          }
+        }
+      ]
+    },
+    {
+      "name": "retention_085",
+      "desired_retention": 0.85,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767604200000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767604200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 16.18802282851261,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1770282600000,
+            "last_review_ms": 1767604200000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1770282600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 61.22149981318051,
+            "difficulty": 4.743715608383524,
+            "due_ms": 1780391400000,
+            "last_review_ms": 1770282600000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1780391400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 359.72791681855756,
+            "difficulty": 2.9725386768547852,
+            "due_ms": 1839661800000,
+            "last_review_ms": 1780391400000
+          }
+        }
+      ]
+    },
+    {
+      "name": "retention_095",
+      "desired_retention": 0.95,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767345000000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767345000000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.319186097840142,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1767604200000,
+            "last_review_ms": 1767345000000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767604200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 14.853404264541638,
+            "difficulty": 4.743715608383524,
+            "due_ms": 1768122600000,
+            "last_review_ms": 1767604200000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768122600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 44.252639011987576,
+            "difficulty": 2.9725386768547852,
+            "due_ms": 1769677800000,
+            "last_review_ms": 1768122600000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_0",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767505581000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.6075801062519337,
+            "difficulty": 7.394502741279718,
+            "due_ms": 1767505641000,
+            "last_review_ms": 1767505581000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767505641000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.6596743320386499,
+            "difficulty": 7.382336607835277,
+            "due_ms": 1767506241000,
+            "last_review_ms": 1767505641000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767505701000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.2254895419978855,
+            "difficulty": 6.49286385458474,
+            "due_ms": 1767592101000,
+            "last_review_ms": 1767505701000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767505761000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.2705331208791055,
+            "difficulty": 6.481599360026993,
+            "due_ms": 1767592161000,
+            "last_review_ms": 1767505761000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767592161000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.36571225797226264,
+            "difficulty": 8.828754004062063,
+            "due_ms": 1767592761000,
+            "last_review_ms": 1767592161000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767592221000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.410555704498982,
+            "difficulty": 8.815153619354838,
+            "due_ms": 1767678621000,
+            "last_review_ms": 1767592221000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767844208000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.0405168924337214,
+            "difficulty": 8.404461542081402,
+            "due_ms": 1768103408000,
+            "last_review_ms": 1767844208000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768103408000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 9.593796140662892,
+            "difficulty": 7.856535310833983,
+            "due_ms": 1768967408000,
+            "last_review_ms": 1768103408000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769179458000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 22.62065306624679,
+            "difficulty": 7.843907144819987,
+            "due_ms": 1771166658000,
+            "last_review_ms": 1769179458000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1771166658000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 36.54288305565319,
+            "difficulty": 8.553913458101293,
+            "due_ms": 1774363458000,
+            "last_review_ms": 1771166658000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1774270036000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 51.960495800073865,
+            "difficulty": 9.025248735151623,
+            "due_ms": 1778762836000,
+            "last_review_ms": 1774270036000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1778610841000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 79.80645218983902,
+            "difficulty": 9.01145185571331,
+            "due_ms": 1785522841000,
+            "last_review_ms": 1778610841000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1785717312000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 121.82909153951586,
+            "difficulty": 8.997668773154434,
+            "due_ms": 1796258112000,
+            "last_review_ms": 1785717312000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1796420978000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 157.58342876561173,
+            "difficulty": 9.31983419228158,
+            "due_ms": 1810072178000,
+            "last_review_ms": 1796420978000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1809861879000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 271.22314084460027,
+            "difficulty": 9.07778284436556,
+            "due_ms": 1833276279000,
+            "last_review_ms": 1809861879000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1833389456000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 381.89143781009767,
+            "difficulty": 9.063933430818032,
+            "due_ms": 1866394256000,
+            "last_review_ms": 1833389456000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1866394256000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 529.869047311334,
+            "difficulty": 9.050097866684052,
+            "due_ms": 1912186256000,
+            "last_review_ms": 1866394256000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1912186256000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 725.66799482803,
+            "difficulty": 9.036276138114205,
+            "due_ms": 1974912656000,
+            "last_review_ms": 1912186256000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1974912656000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 981.9748259651661,
+            "difficulty": 9.022468231272928,
+            "due_ms": 2059757456000,
+            "last_review_ms": 1974912656000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 2059757456000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 7.824780784559083,
+            "difficulty": 9.663920324132278,
+            "due_ms": 2059758056000,
+            "last_review_ms": 2059757456000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 2059758056000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 7.824780784559083,
+            "difficulty": 9.762123019142948,
+            "due_ms": 2059758956000,
+            "last_review_ms": 2059758056000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 2059758956000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.824780784559083,
+            "difficulty": 9.747589265420642,
+            "due_ms": 2060450156000,
+            "last_review_ms": 2059758956000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 2060358756000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.142457158611182,
+            "difficulty": 9.902262677233598,
+            "due_ms": 2060359356000,
+            "last_review_ms": 2060358756000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 2060359356000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.047038291457902,
+            "difficulty": 9.854831787821144,
+            "due_ms": 2060532156000,
+            "last_review_ms": 2060359356000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_1",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.212,
+            "difficulty": 6.4133,
+            "due_ms": 1767258060000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258060000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.212,
+            "difficulty": 7.604209769076838,
+            "due_ms": 1767258390000,
+            "last_review_ms": 1767258060000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258390000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.24668918777567272,
+            "difficulty": 7.5918339286046,
+            "due_ms": 1767258990000,
+            "last_review_ms": 1767258390000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258990000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.09603383636195935,
+            "difficulty": 9.193680557158455,
+            "due_ms": 1767259050000,
+            "last_review_ms": 1767258990000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767259050000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.11772478736294154,
+            "difficulty": 9.179715245898134,
+            "due_ms": 1767259650000,
+            "last_review_ms": 1767259050000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767259110000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.142394088425543,
+            "difficulty": 9.165763899949074,
+            "due_ms": 1767345510000,
+            "last_review_ms": 1767259110000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767345510000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7120895537898148,
+            "difficulty": 9.151826505345962,
+            "due_ms": 1767431910000,
+            "last_review_ms": 1767345510000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767431910000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.486013804865056,
+            "difficulty": 8.853634817614271,
+            "due_ms": 1767604710000,
+            "last_review_ms": 1767431910000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767604710000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5808098690615304,
+            "difficulty": 9.608425929129888,
+            "due_ms": 1767605310000,
+            "last_review_ms": 1767604710000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767604770000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0880590387860054,
+            "difficulty": 9.462808491293638,
+            "due_ms": 1767691170000,
+            "last_review_ms": 1767604770000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767653280000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0880590387860054,
+            "difficulty": 9.628615612693249,
+            "due_ms": 1767739680000,
+            "last_review_ms": 1767653280000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767739680000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.32204860950711084,
+            "difficulty": 9.86315684660294,
+            "due_ms": 1767740280000,
+            "last_review_ms": 1767739680000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767740280000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6271798668768186,
+            "difficulty": 9.80265861092543,
+            "due_ms": 1767826680000,
+            "last_review_ms": 1767740280000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767826680000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.9875324272728242,
+            "difficulty": 9.854223959120407,
+            "due_ms": 1767913080000,
+            "last_review_ms": 1767826680000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767913080000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.6039091075431366,
+            "difficulty": 9.839598104458124,
+            "due_ms": 1768085880000,
+            "last_review_ms": 1767913080000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768044878000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.820534903052584,
+            "difficulty": 9.771227634993199,
+            "due_ms": 1768304078000,
+            "last_review_ms": 1768044878000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768304078000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 5.894514759255142,
+            "difficulty": 9.680010940696974,
+            "due_ms": 1768822478000,
+            "last_review_ms": 1768304078000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768822478000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 9.053552539915865,
+            "difficulty": 9.665559299053115,
+            "due_ms": 1769600078000,
+            "last_review_ms": 1768822478000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1769515306000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.252756995531254,
+            "difficulty": 9.875299985092362,
+            "due_ms": 1769515906000,
+            "last_review_ms": 1769515306000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1769515906000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.231100373659658,
+            "difficulty": 9.818859420427762,
+            "due_ms": 1769688706000,
+            "last_review_ms": 1769515906000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769906705000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.062484577455846,
+            "difficulty": 9.804268930304172,
+            "due_ms": 1770252305000,
+            "last_review_ms": 1769906705000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1770142086000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.7555602947623768,
+            "difficulty": 9.920892897659092,
+            "due_ms": 1770142686000,
+            "last_review_ms": 1770142086000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1770145295000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3911402907368768,
+            "difficulty": 9.879687359744569,
+            "due_ms": 1770231695000,
+            "last_review_ms": 1770145295000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1770231695000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.7653375458483236,
+            "difficulty": 9.905359232126246,
+            "due_ms": 1770404495000,
+            "last_review_ms": 1770231695000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770404495000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.7994130219585873,
+            "difficulty": 9.890682242190957,
+            "due_ms": 1770663695000,
+            "last_review_ms": 1770404495000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_2",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.2956,
+            "difficulty": 1.0,
+            "due_ms": 1767949200000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767949200000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.3886324609821161,
+            "difficulty": 7.0269895692968385,
+            "due_ms": 1767949800000,
+            "last_review_ms": 1767949200000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767949800000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.427881680763876,
+            "difficulty": 7.0151909490243805,
+            "due_ms": 1768036200000,
+            "last_review_ms": 1767949800000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767949860000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.427881680763876,
+            "difficulty": 8.003773029157445,
+            "due_ms": 1768036260000,
+            "last_review_ms": 1767949860000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768036260000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.3895866757401907,
+            "difficulty": 9.329082138324292,
+            "due_ms": 1768036860000,
+            "last_review_ms": 1768036260000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768036860000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7492629466005959,
+            "difficulty": 9.090121023021462,
+            "due_ms": 1768123260000,
+            "last_review_ms": 1768036860000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768315075000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.5990679839240585,
+            "difficulty": 9.076259271295278,
+            "due_ms": 1768574275000,
+            "last_review_ms": 1768315075000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768574275000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.358474405299195,
+            "difficulty": 8.752816535376954,
+            "due_ms": 1769179075000,
+            "last_review_ms": 1768574275000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769179075000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 13.521967047705877,
+            "difficulty": 8.739292088138415,
+            "due_ms": 1770388675000,
+            "last_review_ms": 1769179075000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770388675000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 24.461334442330504,
+            "difficulty": 8.725781165347113,
+            "due_ms": 1772462275000,
+            "last_review_ms": 1770388675000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1772462275000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 56.96871787137251,
+            "difficulty": 8.28522497870065,
+            "due_ms": 1777387075000,
+            "last_review_ms": 1772462275000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1777591379000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 100.53100789787005,
+            "difficulty": 8.272168123018787,
+            "due_ms": 1786317779000,
+            "last_review_ms": 1777591379000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1786317779000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 3.642274855431053,
+            "difficulty": 9.417301780589876,
+            "due_ms": 1786318379000,
+            "last_review_ms": 1786317779000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1786318379000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 3.642274855431053,
+            "difficulty": 9.598406137515372,
+            "due_ms": 1786319279000,
+            "last_review_ms": 1786318379000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1786327553000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.187714427237436,
+            "difficulty": 9.853227197536405,
+            "due_ms": 1786328153000,
+            "last_review_ms": 1786327553000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1786338299000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.187714427237436,
+            "difficulty": 9.887793743408908,
+            "due_ms": 1786339199000,
+            "last_review_ms": 1786338299000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1786339199000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.2339090058363618,
+            "difficulty": 9.873134318962336,
+            "due_ms": 1786425599000,
+            "last_review_ms": 1786339199000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1786551436000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.2354533435451414,
+            "difficulty": 9.858489553940212,
+            "due_ms": 1786724236000,
+            "last_review_ms": 1786551436000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1786724236000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.313076268288096,
+            "difficulty": 9.796431726550654,
+            "due_ms": 1787069836000,
+            "last_review_ms": 1786724236000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1787069836000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.389459359706945,
+            "difficulty": 9.78186366412094,
+            "due_ms": 1787588236000,
+            "last_review_ms": 1787069836000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1787588236000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 11.900334585491471,
+            "difficulty": 9.69420103512025,
+            "due_ms": 1788625036000,
+            "last_review_ms": 1787588236000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1788625036000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.4602009732509134,
+            "difficulty": 9.884714328973825,
+            "due_ms": 1788625636000,
+            "last_review_ms": 1788625036000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1788625096000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.496516246749586,
+            "difficulty": 9.870057983941688,
+            "due_ms": 1788711496000,
+            "last_review_ms": 1788625096000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1788711496000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.126862910904002,
+            "difficulty": 9.855416295254583,
+            "due_ms": 1788884296000,
+            "last_review_ms": 1788711496000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1788887680000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.199264633346085,
+            "difficulty": 9.792331528026144,
+            "due_ms": 1789233280000,
+            "last_review_ms": 1788887680000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_3",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 5.112170705601056,
+            "due_ms": 1767258330000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258330000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 6.7404595108297,
+            "due_ms": 1767258660000,
+            "last_review_ms": 1767258330000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258390000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 1.3358997622047517,
+            "difficulty": 6.728947420615708,
+            "due_ms": 1767258990000,
+            "last_review_ms": 1767258390000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258990000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.4653455794121078,
+            "difficulty": 8.91005562961076,
+            "due_ms": 1767259050000,
+            "last_review_ms": 1767258990000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767259050000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.4653455794121078,
+            "difficulty": 9.2616725048248,
+            "due_ms": 1767259380000,
+            "last_review_ms": 1767259050000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767259110000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.8845611656287156,
+            "difficulty": 9.00018623129536,
+            "due_ms": 1767345510000,
+            "last_review_ms": 1767259110000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767345510000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.9450873922792642,
+            "difficulty": 8.986414414360903,
+            "due_ms": 1767518310000,
+            "last_review_ms": 1767345510000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767518310000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.8716557365145525,
+            "difficulty": 8.97265636924338,
+            "due_ms": 1767863910000,
+            "last_review_ms": 1767518310000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768059815000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.413216228301152,
+            "difficulty": 8.958912082170974,
+            "due_ms": 1768751015000,
+            "last_review_ms": 1768059815000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1768499756000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 11.046205449410207,
+            "difficulty": 9.29410569474496,
+            "due_ms": 1769450156000,
+            "last_review_ms": 1768499756000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769274527000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 16.40378199587579,
+            "difficulty": 9.280039958347054,
+            "due_ms": 1770656927000,
+            "last_review_ms": 1769274527000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1770656927000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.7027094462891488,
+            "difficulty": 9.748582399333797,
+            "due_ms": 1770657527000,
+            "last_review_ms": 1770656927000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770657527000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.7275023678039765,
+            "difficulty": 9.7340621862313,
+            "due_ms": 1770830327000,
+            "last_review_ms": 1770657527000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770830327000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.9197394077081213,
+            "difficulty": 9.719556493341907,
+            "due_ms": 1771089527000,
+            "last_review_ms": 1770830327000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1771089527000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.63752068592083,
+            "difficulty": 9.705065306145402,
+            "due_ms": 1771521527000,
+            "last_review_ms": 1771089527000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1771682233000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.438987278039293,
+            "difficulty": 9.789436975559422,
+            "due_ms": 1772200633000,
+            "last_review_ms": 1771682233000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772200633000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 9.36555595039437,
+            "difficulty": 9.7748759078807,
+            "due_ms": 1772978233000,
+            "last_review_ms": 1772200633000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772978233000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 13.504026716449571,
+            "difficulty": 9.760329401269656,
+            "due_ms": 1774187833000,
+            "last_review_ms": 1772978233000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1774187833000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.5578111260144893,
+            "difficulty": 9.906450273254245,
+            "due_ms": 1774188433000,
+            "last_review_ms": 1774187833000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1774187893000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.7348860598476743,
+            "difficulty": 9.860418683289918,
+            "due_ms": 1774447093000,
+            "last_review_ms": 1774187893000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1774408696000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.8613515981318365,
+            "difficulty": 9.845786633903465,
+            "due_ms": 1774754296000,
+            "last_review_ms": 1774408696000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1774754296000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 5.827329370925665,
+            "difficulty": 9.8311692165664,
+            "due_ms": 1775272696000,
+            "last_review_ms": 1774754296000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1775227183000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.274877911499113,
+            "difficulty": 9.81656641664667,
+            "due_ms": 1775918383000,
+            "last_review_ms": 1775227183000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1775835744000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.250214696616117,
+            "difficulty": 9.863456608661913,
+            "due_ms": 1776699744000,
+            "last_review_ms": 1775835744000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1776699744000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 18.08724045803201,
+            "difficulty": 9.803058539495598,
+            "due_ms": 1778254944000,
+            "last_review_ms": 1776699744000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_4",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767052888000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 5.112170705601056,
+            "due_ms": 1767053218000,
+            "last_review_ms": 1767052888000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767053218000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 6.7404595108297,
+            "due_ms": 1767053548000,
+            "last_review_ms": 1767053218000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767053278000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.4514029154253082,
+            "difficulty": 8.913839575381886,
+            "due_ms": 1767053338000,
+            "last_review_ms": 1767053278000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767053338000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.859777221649519,
+            "difficulty": 8.536123745847137,
+            "due_ms": 1767139738000,
+            "last_review_ms": 1767053338000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767139738000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.6424253046340505,
+            "difficulty": 9.013439095156723,
+            "due_ms": 1767312538000,
+            "last_review_ms": 1767139738000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767312538000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.7592370693087274,
+            "difficulty": 9.330303266923705,
+            "due_ms": 1767571738000,
+            "last_review_ms": 1767312538000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767571738000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.0966576880844,
+            "difficulty": 9.54065247001303,
+            "due_ms": 1767917338000,
+            "last_review_ms": 1767571738000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767917338000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.600024728947385,
+            "difficulty": 9.526340186839855,
+            "due_ms": 1768522138000,
+            "last_review_ms": 1767917338000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768522138000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.589753126337232,
+            "difficulty": 9.512042215949853,
+            "due_ms": 1769472538000,
+            "last_review_ms": 1768522138000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1769542053000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 14.130039637892432,
+            "difficulty": 9.661299253411613,
+            "due_ms": 1770751653000,
+            "last_review_ms": 1769542053000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1770751653000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 26.327051418169226,
+            "difficulty": 9.533349616653403,
+            "due_ms": 1772998053000,
+            "last_review_ms": 1770751653000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1772998053000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 2.108208782486079,
+            "difficulty": 9.831843561513418,
+            "due_ms": 1772998653000,
+            "last_review_ms": 1772998053000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772998653000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.1090518457681307,
+            "difficulty": 9.817240087248742,
+            "due_ms": 1773171453000,
+            "last_review_ms": 1772998653000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1773171453000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5251366386752017,
+            "difficulty": 9.925156428742905,
+            "due_ms": 1773172053000,
+            "last_review_ms": 1773171453000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1773402846000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.21487649658114166,
+            "difficulty": 9.960627796360914,
+            "due_ms": 1773403446000,
+            "last_review_ms": 1773402846000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1773403446000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.24981472730224816,
+            "difficulty": 9.945895537861391,
+            "due_ms": 1773489846000,
+            "last_review_ms": 1773403446000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1773489846000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6585178872543823,
+            "difficulty": 9.931178011620368,
+            "due_ms": 1773576246000,
+            "last_review_ms": 1773489846000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1773576246000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.198479501262389,
+            "difficulty": 9.916475202905586,
+            "due_ms": 1773662646000,
+            "last_review_ms": 1773576246000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1773662646000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.7933296068555746,
+            "difficulty": 9.901787096999518,
+            "due_ms": 1773835446000,
+            "last_review_ms": 1773662646000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1773835446000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.833038138442131,
+            "difficulty": 9.887113679199356,
+            "due_ms": 1774094646000,
+            "last_review_ms": 1773835446000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1774094646000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.7275296056947846,
+            "difficulty": 9.910289169046822,
+            "due_ms": 1774440246000,
+            "last_review_ms": 1774094646000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1774423618000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.7486995748375065,
+            "difficulty": 9.955741029196178,
+            "due_ms": 1774424218000,
+            "last_review_ms": 1774423618000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1774437056000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3793359564946155,
+            "difficulty": 9.926180112918416,
+            "due_ms": 1774523456000,
+            "last_review_ms": 1774437056000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1774523456000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.9753849604500833,
+            "difficulty": 9.911482302102335,
+            "due_ms": 1774696256000,
+            "last_review_ms": 1774523456000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1774696256000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5051485451000243,
+            "difficulty": 9.95613320391822,
+            "due_ms": 1774696856000,
+            "last_review_ms": 1774696256000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_5",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767493515000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.964332335820698,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1768443915000,
+            "last_review_ms": 1767493515000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768443915000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 46.28021728755693,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1772418315000,
+            "last_review_ms": 1768443915000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772418315000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 162.86220163874916,
+            "difficulty": 2.0974554287524403,
+            "due_ms": 1786501515000,
+            "last_review_ms": 1772418315000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1786501515000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 497.4471936002745,
+            "difficulty": 2.0905863426205262,
+            "due_ms": 1829442315000,
+            "last_review_ms": 1786501515000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1829442315000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 6.886189397445606,
+            "difficulty": 7.385457884129076,
+            "due_ms": 1829442915000,
+            "last_review_ms": 1829442315000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1829442375000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 6.886189397445606,
+            "difficulty": 8.249573475119119,
+            "due_ms": 1829443275000,
+            "last_review_ms": 1829442375000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1829443275000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 6.886189397445606,
+            "difficulty": 8.823213672204849,
+            "due_ms": 1829444175000,
+            "last_review_ms": 1829443275000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1829444175000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.886189397445606,
+            "difficulty": 8.809618827829482,
+            "due_ms": 1830048975000,
+            "last_review_ms": 1829444175000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830048975000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.1056288768060494,
+            "difficulty": 9.59395817259636,
+            "due_ms": 1830049575000,
+            "last_review_ms": 1830048975000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830049575000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.38995771528866885,
+            "difficulty": 9.851765181713688,
+            "due_ms": 1830050175000,
+            "last_review_ms": 1830049575000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830050175000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.14730117309295354,
+            "difficulty": 9.936504592522892,
+            "due_ms": 1830050775000,
+            "last_review_ms": 1830050175000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1830050775000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.14730117309295354,
+            "difficulty": 9.943077158927546,
+            "due_ms": 1830051675000,
+            "last_review_ms": 1830050775000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830051675000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.1755599267622796,
+            "difficulty": 9.928362451065455,
+            "due_ms": 1830138075000,
+            "last_review_ms": 1830051675000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1830161583000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.8562119172942979,
+            "difficulty": 9.889652889818148,
+            "due_ms": 1830247983000,
+            "last_review_ms": 1830161583000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830161643000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.9088758726870135,
+            "difficulty": 9.874991606225167,
+            "due_ms": 1830248043000,
+            "last_review_ms": 1830161643000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830248043000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.28470944658033215,
+            "difficulty": 9.944138960320128,
+            "due_ms": 1830248643000,
+            "last_review_ms": 1830248043000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1830248643000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.28470944658033215,
+            "difficulty": 9.948145208032889,
+            "due_ms": 1830249543000,
+            "last_review_ms": 1830248643000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830249543000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.1097943203194337,
+            "difficulty": 9.968184051789834,
+            "due_ms": 1830250143000,
+            "last_review_ms": 1830249543000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1830249603000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.045080358358494936,
+            "difficulty": 9.974770683468604,
+            "due_ms": 1830250203000,
+            "last_review_ms": 1830249603000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830303467000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.05808207793948847,
+            "difficulty": 9.960024282081973,
+            "due_ms": 1830389867000,
+            "last_review_ms": 1830303467000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830389867000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2667873664435813,
+            "difficulty": 9.945292627096729,
+            "due_ms": 1830476267000,
+            "last_review_ms": 1830389867000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1830476267000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.5184116143013359,
+            "difficulty": 9.948911065800068,
+            "due_ms": 1830562667000,
+            "last_review_ms": 1830476267000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830562667000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0233088297950894,
+            "difficulty": 9.934190524031106,
+            "due_ms": 1830649067000,
+            "last_review_ms": 1830562667000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830649067000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.5990760174407823,
+            "difficulty": 9.919484702803912,
+            "due_ms": 1830821867000,
+            "last_review_ms": 1830649067000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_6",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767519707000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.6369781117173378,
+            "difficulty": 7.392238132342694,
+            "due_ms": 1767520307000,
+            "last_review_ms": 1767519707000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767659424000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.447945628311214,
+            "difficulty": 7.38007426350719,
+            "due_ms": 1767832224000,
+            "last_review_ms": 1767659424000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767832224000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.581538506116773,
+            "difficulty": 8.24599957687359,
+            "due_ms": 1768264224000,
+            "last_review_ms": 1767832224000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1768264224000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.9564854427299485,
+            "difficulty": 8.820841152005809,
+            "due_ms": 1768955424000,
+            "last_review_ms": 1768264224000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768913282000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 13.982219070537724,
+            "difficulty": 8.807248680150641,
+            "due_ms": 1770122882000,
+            "last_review_ms": 1768913282000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770122882000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 24.63604733741457,
+            "difficulty": 8.793669800767328,
+            "due_ms": 1772282882000,
+            "last_review_ms": 1770122882000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772390433000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 42.477327648264314,
+            "difficulty": 8.780104500263398,
+            "due_ms": 1776019233000,
+            "last_review_ms": 1772390433000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1776181227000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 58.98141876766096,
+            "difficulty": 9.175404889441394,
+            "due_ms": 1781278827000,
+            "last_review_ms": 1776181227000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1781278827000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 88.38343427414209,
+            "difficulty": 9.16145785384879,
+            "due_ms": 1788882027000,
+            "last_review_ms": 1781278827000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1788882027000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 113.26003607645454,
+            "difficulty": 9.428565016617654,
+            "due_ms": 1798645227000,
+            "last_review_ms": 1788882027000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1798645227000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 156.79608807765777,
+            "difficulty": 9.414364820897873,
+            "due_ms": 1812210027000,
+            "last_review_ms": 1798645227000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1812210027000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 214.55217523978072,
+            "difficulty": 9.400178825373812,
+            "due_ms": 1830786027000,
+            "last_review_ms": 1812210027000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1830786027000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 290.273254419438,
+            "difficulty": 9.386007015845276,
+            "due_ms": 1855842027000,
+            "last_review_ms": 1830786027000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1855606778000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 5.2454848540684695,
+            "difficulty": 9.783413050557472,
+            "due_ms": 1855607378000,
+            "last_review_ms": 1855606778000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1855782238000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.531862371742886,
+            "difficulty": 9.69626815430246,
+            "due_ms": 1856473438000,
+            "last_review_ms": 1855782238000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1856473438000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 14.919367109976525,
+            "difficulty": 9.58000349467119,
+            "due_ms": 1857769438000,
+            "last_review_ms": 1856473438000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1857848179000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 22.223381839099286,
+            "difficulty": 9.565651860473357,
+            "due_ms": 1859748979000,
+            "last_review_ms": 1857848179000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1859748979000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 32.39395547978134,
+            "difficulty": 9.551314577909721,
+            "due_ms": 1862513779000,
+            "last_review_ms": 1859748979000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1862382974000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 45.79542039685949,
+            "difficulty": 9.536991632628649,
+            "due_ms": 1866357374000,
+            "last_review_ms": 1862382974000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1866285543000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 64.64601172124975,
+            "difficulty": 9.522683010292857,
+            "due_ms": 1871901543000,
+            "last_review_ms": 1866285543000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1871904569000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 3.0549862158284418,
+            "difficulty": 9.828337520535628,
+            "due_ms": 1871905169000,
+            "last_review_ms": 1871904569000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1871904629000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.0549862158284418,
+            "difficulty": 9.813737552311931,
+            "due_ms": 1872163829000,
+            "last_review_ms": 1871904629000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1872068354000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.720261142120644,
+            "difficulty": 9.799152184056457,
+            "due_ms": 1872413954000,
+            "last_review_ms": 1872068354000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_7",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 5.112170705601056,
+            "due_ms": 1767258330000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258060000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 1.3358997622047517,
+            "difficulty": 5.102286904192293,
+            "due_ms": 1767258660000,
+            "last_review_ms": 1767258060000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258660000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.4653455794121078,
+            "difficulty": 8.375383379153895,
+            "due_ms": 1767258720000,
+            "last_review_ms": 1767258660000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767258720000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.8845611656287156,
+            "difficulty": 7.817740580898497,
+            "due_ms": 1767345120000,
+            "last_review_ms": 1767258720000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767345120000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.28351492108168275,
+            "difficulty": 9.267934537602224,
+            "due_ms": 1767345720000,
+            "last_review_ms": 1767345120000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767345720000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.28351492108168275,
+            "difficulty": 9.499249201106647,
+            "due_ms": 1767346620000,
+            "last_review_ms": 1767345720000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767346620000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.10936391927318412,
+            "difficulty": 9.820634986806025,
+            "due_ms": 1767347220000,
+            "last_review_ms": 1767346620000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767418649000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2286694053244248,
+            "difficulty": 9.74592792710305,
+            "due_ms": 1767505049000,
+            "last_review_ms": 1767418649000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767418709000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2647642389373129,
+            "difficulty": 9.731410368472785,
+            "due_ms": 1767505109000,
+            "last_review_ms": 1767418709000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767505109000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7666941255528932,
+            "difficulty": 9.71690732740115,
+            "due_ms": 1767591509000,
+            "last_review_ms": 1767505109000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767591509000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.25346010301277755,
+            "difficulty": 9.89217773284377,
+            "due_ms": 1767592109000,
+            "last_review_ms": 1767591509000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767591569000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.25346010301277755,
+            "difficulty": 9.913650923840883,
+            "due_ms": 1767592469000,
+            "last_review_ms": 1767591569000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767591629000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.09849405003337143,
+            "difficulty": 9.956846015137055,
+            "due_ms": 1767592229000,
+            "last_review_ms": 1767591629000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767592229000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.12053988474592103,
+            "difficulty": 9.942117538418755,
+            "due_ms": 1767678629000,
+            "last_review_ms": 1767592229000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767678629000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.42564413079667884,
+            "difficulty": 9.927403790177173,
+            "due_ms": 1767765029000,
+            "last_review_ms": 1767678629000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767793004000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7206800806084455,
+            "difficulty": 9.937035622233068,
+            "due_ms": 1767879404000,
+            "last_review_ms": 1767793004000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767793064000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.2614452173634616,
+            "difficulty": 9.964532406482617,
+            "due_ms": 1767793664000,
+            "last_review_ms": 1767793064000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767891189000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5067646001002144,
+            "difficulty": 9.961683327930139,
+            "due_ms": 1767892089000,
+            "last_review_ms": 1767891189000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767892089000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.5568230066020429,
+            "difficulty": 9.946950013899047,
+            "due_ms": 1767978489000,
+            "last_review_ms": 1767892089000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767978489000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0708756512240085,
+            "difficulty": 9.932231433181984,
+            "due_ms": 1768064889000,
+            "last_review_ms": 1767978489000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1768064889000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.4195348738234033,
+            "difficulty": 9.940240436627825,
+            "due_ms": 1768151289000,
+            "last_review_ms": 1768064889000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768151289000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.008884269692751,
+            "difficulty": 9.925528565488035,
+            "due_ms": 1768324089000,
+            "last_review_ms": 1768151289000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768324089000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.040932006288383,
+            "difficulty": 9.910831406219385,
+            "due_ms": 1768583289000,
+            "last_review_ms": 1768324089000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768583289000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.5092449627630575,
+            "difficulty": 9.896148944110003,
+            "due_ms": 1769015289000,
+            "last_review_ms": 1768583289000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1769015289000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 5.859089394691622,
+            "difficulty": 9.916287198937853,
+            "due_ms": 1769533689000,
+            "last_review_ms": 1769015289000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_8",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 1.2931,
+            "difficulty": 5.112170705601056,
+            "due_ms": 1767258330000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258330000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.4514029154253082,
+            "difficulty": 8.378632117467106,
+            "due_ms": 1767258390000,
+            "last_review_ms": 1767258330000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767258390000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.1688774512073012,
+            "difficulty": 9.452295771609876,
+            "due_ms": 1767258450000,
+            "last_review_ms": 1767258390000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767258450000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.1688774512073012,
+            "difficulty": 9.62163677947443,
+            "due_ms": 1767258780000,
+            "last_review_ms": 1767258450000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258780000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.19947322256372596,
+            "difficulty": 9.607243511991793,
+            "due_ms": 1767259380000,
+            "last_review_ms": 1767258780000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767259380000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.23304476454854742,
+            "difficulty": 9.59286463777664,
+            "due_ms": 1767345780000,
+            "last_review_ms": 1767259380000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767345780000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.10586711092945818,
+            "difficulty": 9.851405744254484,
+            "due_ms": 1767346380000,
+            "last_review_ms": 1767345780000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767346380000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.12894928472140568,
+            "difficulty": 9.836782707807066,
+            "due_ms": 1767432780000,
+            "last_review_ms": 1767346380000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767432780000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.4747935250738106,
+            "difficulty": 9.822174294396095,
+            "due_ms": 1767519180000,
+            "last_review_ms": 1767432780000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767519180000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0288004223718186,
+            "difficulty": 9.807580489398537,
+            "due_ms": 1767605580000,
+            "last_review_ms": 1767519180000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767605580000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.3098118334708778,
+            "difficulty": 9.921981384614808,
+            "due_ms": 1767606180000,
+            "last_review_ms": 1767605580000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767606180000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.3098118334708778,
+            "difficulty": 9.933435976736671,
+            "due_ms": 1767607080000,
+            "last_review_ms": 1767606180000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767607080000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.118812297580177,
+            "difficulty": 9.963349227485539,
+            "due_ms": 1767607680000,
+            "last_review_ms": 1767607080000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767607680000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.118812297580177,
+            "difficulty": 9.96089787857574,
+            "due_ms": 1767608580000,
+            "last_review_ms": 1767607680000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767608580000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2470742153259558,
+            "difficulty": 9.933060141051447,
+            "due_ms": 1767694980000,
+            "last_review_ms": 1767608580000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767608640000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.28462073380882696,
+            "difficulty": 9.918355450207233,
+            "due_ms": 1767695040000,
+            "last_review_ms": 1767608640000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767695040000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.12305728188639276,
+            "difficulty": 9.958392360962895,
+            "due_ms": 1767695640000,
+            "last_review_ms": 1767695040000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767695640000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.14841076726337107,
+            "difficulty": 9.94366233789877,
+            "due_ms": 1767782040000,
+            "last_review_ms": 1767695640000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1767782040000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7739501100434499,
+            "difficulty": 9.91006528585643,
+            "due_ms": 1767868440000,
+            "last_review_ms": 1767782040000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767868440000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3404474845177192,
+            "difficulty": 9.89538358986741,
+            "due_ms": 1767954840000,
+            "last_review_ms": 1767868440000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767954840000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.7084577985462615,
+            "difficulty": 9.915779121126112,
+            "due_ms": 1768127640000,
+            "last_review_ms": 1767954840000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768269150000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.48848966005796607,
+            "difficulty": 9.957545539112967,
+            "due_ms": 1768269750000,
+            "last_review_ms": 1768269150000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768269750000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.18180521331975694,
+            "difficulty": 9.971273876693603,
+            "due_ms": 1768270350000,
+            "last_review_ms": 1768269750000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768509223000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6445322353798243,
+            "difficulty": 9.956530972113747,
+            "due_ms": 1768595623000,
+            "last_review_ms": 1768509223000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768600465000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.1695199142428088,
+            "difficulty": 9.941802810438471,
+            "due_ms": 1768686865000,
+            "last_review_ms": 1768600465000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_9",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767453727000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.6075801062519337,
+            "difficulty": 7.394502741279718,
+            "due_ms": 1767453787000,
+            "last_review_ms": 1767453727000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767453787000,
+          "expected": {
+            "phase": 1,
+            "step": 0,
+            "stability": 0.22290513490476177,
+            "difficulty": 9.128819137736839,
+            "due_ms": 1767453847000,
+            "last_review_ms": 1767453787000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767453847000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 0.25852403523801404,
+            "difficulty": 9.114918687895939,
+            "due_ms": 1767454447000,
+            "last_review_ms": 1767453847000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767518549000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.29692414798355593,
+            "difficulty": 9.10103213850488,
+            "due_ms": 1767604949000,
+            "last_review_ms": 1767518549000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767604949000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.12773272588315596,
+            "difficulty": 9.68974374620485,
+            "due_ms": 1767605549000,
+            "last_review_ms": 1767604949000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767605009000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.15367196713861095,
+            "difficulty": 9.675282371755484,
+            "due_ms": 1767691409000,
+            "last_review_ms": 1767605009000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767691409000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.5787876342735772,
+            "difficulty": 9.660835458680566,
+            "due_ms": 1767777809000,
+            "last_review_ms": 1767691409000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1767691469000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.21302134309314585,
+            "difficulty": 9.87374729088402,
+            "due_ms": 1767692069000,
+            "last_review_ms": 1767691469000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767692069000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.24779927485921707,
+            "difficulty": 9.859101912889974,
+            "due_ms": 1767778469000,
+            "last_review_ms": 1767692069000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767720419000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2854009424406181,
+            "difficulty": 9.844471180273922,
+            "due_ms": 1767806819000,
+            "last_review_ms": 1767720419000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767806819000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7543450696309278,
+            "difficulty": 9.829855078390485,
+            "due_ms": 1767893219000,
+            "last_review_ms": 1767806819000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1767806879000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.7543450696309278,
+            "difficulty": 9.872278241579096,
+            "due_ms": 1767893279000,
+            "last_review_ms": 1767806879000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767893279000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3380184700858124,
+            "difficulty": 9.857634332634355,
+            "due_ms": 1767979679000,
+            "last_review_ms": 1767893279000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767979679000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.9707704301506355,
+            "difficulty": 9.843005067598558,
+            "due_ms": 1768152479000,
+            "last_review_ms": 1767979679000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1768152479000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.6375855145237415,
+            "difficulty": 9.88100781720491,
+            "due_ms": 1768411679000,
+            "last_review_ms": 1768152479000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768411679000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.623624255114119,
+            "difficulty": 9.946116447958936,
+            "due_ms": 1768412279000,
+            "last_review_ms": 1768411679000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768412279000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6759338854046579,
+            "difficulty": 9.931398700807815,
+            "due_ms": 1768498679000,
+            "last_review_ms": 1768412279000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768498679000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.2184348184265592,
+            "difficulty": 9.916695671403845,
+            "due_ms": 1768585079000,
+            "last_review_ms": 1768498679000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1768585079000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.576625169345029,
+            "difficulty": 9.929927073992998,
+            "due_ms": 1768757879000,
+            "last_review_ms": 1768585079000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1768757879000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 3.4382177169974106,
+            "difficulty": 9.891740336816646,
+            "due_ms": 1769017079000,
+            "last_review_ms": 1768757879000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769017079000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.951915880435853,
+            "difficulty": 9.877076965776666,
+            "due_ms": 1769449079000,
+            "last_review_ms": 1769017079000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1769449079000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.341652033234713,
+            "difficulty": 9.903626330965993,
+            "due_ms": 1769967479000,
+            "last_review_ms": 1769449079000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1769967479000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.0404665459327103,
+            "difficulty": 9.953550999626309,
+            "due_ms": 1769968079000,
+            "last_review_ms": 1769967479000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769968079000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0903895089968432,
+            "difficulty": 9.93882581792352,
+            "due_ms": 1770054479000,
+            "last_review_ms": 1769968079000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_10",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258600000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.3065,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1767431400000,
+            "last_review_ms": 1767258600000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767431400000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.971048263078135,
+            "difficulty": 2.1043313908464483,
+            "due_ms": 1768381800000,
+            "last_review_ms": 1767431400000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768381800000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 46.316858440073425,
+            "difficulty": 2.0974554287524403,
+            "due_ms": 1772356200000,
+            "last_review_ms": 1768381800000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772356200000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 162.99981577472244,
+            "difficulty": 2.0905863426205262,
+            "due_ms": 1786439400000,
+            "last_review_ms": 1772356200000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1786679750000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 366.1552558503066,
+            "difficulty": 4.73459100485191,
+            "due_ms": 1818302150000,
+            "last_review_ms": 1786679750000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1818302150000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1231.7004974781307,
+            "difficulty": 2.9603650560294303,
+            "due_ms": 1924746950000,
+            "last_review_ms": 1818302150000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1924746950000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2862.2632864137618,
+            "difficulty": 2.9526330602702395,
+            "due_ms": 2172023750000,
+            "last_review_ms": 1924746950000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 2171913247000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4842.842413922985,
+            "difficulty": 5.306857787404832,
+            "due_ms": 2590348447000,
+            "last_review_ms": 2171913247000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 2590180824000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7015.33713157337,
+            "difficulty": 6.8697018681490585,
+            "due_ms": 3196276824000,
+            "last_review_ms": 2590180824000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 3196276824000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 9162.304946202461,
+            "difficulty": 7.9071905974812395,
+            "due_ms": 3987873624000,
+            "last_review_ms": 3196276824000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 3987873624000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 12501.765714113146,
+            "difficulty": 7.894511776180597,
+            "due_ms": 5068046424000,
+            "last_review_ms": 3987873624000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 5068046424000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 20638.778322549882,
+            "difficulty": 7.17618409682822,
+            "due_ms": 6851256024000,
+            "last_review_ms": 5068046424000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 6851256024000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 19.568239565818715,
+            "difficulty": 9.057059283872416,
+            "due_ms": 6851256624000,
+            "last_review_ms": 6851256024000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 6851256624000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 5.71275095976185,
+            "difficulty": 9.67529016790257,
+            "due_ms": 6851257224000,
+            "last_review_ms": 6851256624000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 6851257224000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 5.71275095976185,
+            "difficulty": 9.660843247031506,
+            "due_ms": 6851775624000,
+            "last_review_ms": 6851257224000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 6851775624000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 7.632699298004455,
+            "difficulty": 9.760080311971663,
+            "due_ms": 6852466824000,
+            "last_review_ms": 6851775624000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 6852241699000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.280605789165355,
+            "difficulty": 9.745548600956528,
+            "due_ms": 6853105699000,
+            "last_review_ms": 6852241699000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 6853289033000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 15.533567505434283,
+            "difficulty": 9.731031421652409,
+            "due_ms": 6854671433000,
+            "last_review_ms": 6853289033000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 6854671433000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.664949922201564,
+            "difficulty": 9.896820226580317,
+            "due_ms": 6854672033000,
+            "last_review_ms": 6854671433000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 6854672033000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.664949922201564,
+            "difficulty": 9.916732827523411,
+            "due_ms": 6854672933000,
+            "last_review_ms": 6854672033000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 6854731806000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.664949922201564,
+            "difficulty": 9.92995173995664,
+            "due_ms": 6854732706000,
+            "last_review_ms": 6854731806000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 6854732706000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5716242164093477,
+            "difficulty": 9.962203982548754,
+            "due_ms": 6854733306000,
+            "last_review_ms": 6854732706000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 6854733306000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.21055733795102444,
+            "difficulty": 9.972805075373532,
+            "due_ms": 6854733906000,
+            "last_review_ms": 6854733306000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 6854733906000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.42168147310178633,
+            "difficulty": 9.948946168143692,
+            "due_ms": 6854820306000,
+            "last_review_ms": 6854733906000
+          }
+        }
+      ]
+    },
+    {
+      "name": "random_11",
+      "desired_retention": 0.9,
+      "created_at_ms": 1767258000000,
+      "reviews": [
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767258000000,
+          "expected": {
+            "phase": 1,
+            "step": 1,
+            "stability": 2.3065,
+            "difficulty": 2.118103970459016,
+            "due_ms": 1767258600000,
+            "last_review_ms": 1767258000000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1767447690000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 10.964332335820698,
+            "difficulty": 2.111214235785395,
+            "due_ms": 1768398090000,
+            "last_review_ms": 1767447690000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768560365000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.5538741021505005,
+            "difficulty": 7.392238132342694,
+            "due_ms": 1768560965000,
+            "last_review_ms": 1768560365000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768560965000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.586016936907503,
+            "difficulty": 7.38007426350719,
+            "due_ms": 1768733765000,
+            "last_review_ms": 1768560965000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768733765000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.4513059392002856,
+            "difficulty": 9.124076595206658,
+            "due_ms": 1768734365000,
+            "last_review_ms": 1768733765000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1768899651000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.17433170899952682,
+            "difficulty": 9.697318302420419,
+            "due_ms": 1768900251000,
+            "last_review_ms": 1768899651000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1768900251000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.2054854023571728,
+            "difficulty": 9.682849353414836,
+            "due_ms": 1768986651000,
+            "last_review_ms": 1768900251000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1769070294000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.0956154683416675,
+            "difficulty": 9.562100755843042,
+            "due_ms": 1769156694000,
+            "last_review_ms": 1769070294000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769070354000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.144289208784762,
+            "difficulty": 9.547767024384036,
+            "due_ms": 1769156754000,
+            "last_review_ms": 1769070354000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1769156754000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.3332358370084926,
+            "difficulty": 9.836582465396106,
+            "due_ms": 1769157354000,
+            "last_review_ms": 1769156754000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1769157354000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.12718394135668296,
+            "difficulty": 9.931514136911773,
+            "due_ms": 1769157954000,
+            "last_review_ms": 1769157354000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769157954000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.15305509427232802,
+            "difficulty": 9.916810992071698,
+            "due_ms": 1769244354000,
+            "last_review_ms": 1769157954000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1769244354000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.3617494714636294,
+            "difficulty": 9.930003629226261,
+            "due_ms": 1769330754000,
+            "last_review_ms": 1769244354000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769330754000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.829398410784857,
+            "difficulty": 9.915301994893873,
+            "due_ms": 1769417154000,
+            "last_review_ms": 1769330754000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769417154000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 1.3992942063335583,
+            "difficulty": 9.900615062195817,
+            "due_ms": 1769503554000,
+            "last_review_ms": 1769417154000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1769503554000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 2.010116156840561,
+            "difficulty": 9.88594281643046,
+            "due_ms": 1769676354000,
+            "last_review_ms": 1769503554000
+          }
+        },
+        {
+          "rating": 4,
+          "reviewed_at_ms": 1769676354000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 4.014396066528958,
+            "difficulty": 9.83305859004311,
+            "due_ms": 1770021954000,
+            "last_review_ms": 1769676354000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770021954000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 6.011447826835937,
+            "difficulty": 9.818453900749905,
+            "due_ms": 1770540354000,
+            "last_review_ms": 1770021954000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1770540354000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 8.84583260931898,
+            "difficulty": 9.803863816145993,
+            "due_ms": 1771317954000,
+            "last_review_ms": 1770540354000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1771317954000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 12.85952250343735,
+            "difficulty": 9.789288321626685,
+            "due_ms": 1772441154000,
+            "last_review_ms": 1771317954000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1772441154000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 1.5165100217864698,
+            "difficulty": 9.915968873454943,
+            "due_ms": 1772441754000,
+            "last_review_ms": 1772441154000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1772441214000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.5238697310768488,
+            "difficulty": 9.957607909413138,
+            "due_ms": 1772441814000,
+            "last_review_ms": 1772441214000
+          }
+        },
+        {
+          "rating": 1,
+          "reviewed_at_ms": 1772441814000,
+          "expected": {
+            "phase": 3,
+            "step": 0,
+            "stability": 0.19407788612360605,
+            "difficulty": 9.971294377387151,
+            "due_ms": 1772442414000,
+            "last_review_ms": 1772441814000
+          }
+        },
+        {
+          "rating": 3,
+          "reviewed_at_ms": 1772697204000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6716846584412288,
+            "difficulty": 9.956551452306602,
+            "due_ms": 1772783604000,
+            "last_review_ms": 1772697204000
+          }
+        },
+        {
+          "rating": 2,
+          "reviewed_at_ms": 1772697264000,
+          "expected": {
+            "phase": 2,
+            "step": null,
+            "stability": 0.6716846584412288,
+            "difficulty": 9.956385198635637,
+            "due_ms": 1772783664000,
+            "last_review_ms": 1772697264000
+          }
+        }
+      ]
+    }
+  ]
+}

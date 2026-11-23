@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Qyic background (QyicColors.background). Used by the launcher icon,
+         the launch splash, and the window behind the first frame. -->
+    <color name="ic_launcher_background">#FF15141F</color>
+    <color name="launch_background">#FF15141F</color>
+</resources>
