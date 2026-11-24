@@ -40,17 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Opening a large deck no longer builds every quiz into one column, which
   overflowed the renderer and killed the window.
-- Android: grey boxes in place of the app bar back button and the bottom
-  navigation bar in every language except English (the cause the 0.1.1 splash
-  change was meant to fix). The app registered `flutter_localizations`'
-  `GlobalMaterialLocalizations`, a different type from `material_ui`'s
-  `MaterialLocalizations`, so `material_ui` widgets found only its English
-  fallback and failed to build. The app now uses
-  `GlobalMaterialLocalizations.delegates` from `material_ui`, and the screen
-  render test runs in every supported language.
-- Android Gradle Plugin 9.1.0 → 9.1.1, the minimum Flutter 3.50 accepts. The
-  `android-v0.1.1` release workflow failed on CI because of it. CI now builds a
-  debug APK on every push so the Android build is checked before tagging.
 
 ### Added
 
@@ -93,6 +82,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile UI polish: bundled Space Grotesk and JetBrains Mono fonts (OFL),
   refined component themes, quiz hints, and a navigation rail with capped
   content width on wide screens.
+
+## [Android 0.1.2] - 2026-11-24
+
+Android release 0.1.2 (`mobile` version `0.1.2+3`).
+
+### Fixed
+
+- Android: grey boxes in place of the app bar back button and the bottom
+  navigation bar in every language except English (the cause the 0.1.1 splash
+  change was meant to fix). The app registered `flutter_localizations`'
+  `GlobalMaterialLocalizations`, a different type from `material_ui`'s
+  `MaterialLocalizations`, so `material_ui` widgets found only its English
+  fallback and failed to build. The app now uses
+  `GlobalMaterialLocalizations.delegates` from `material_ui`, and the screen
+  render test runs in every supported language.
+- Android Gradle Plugin 9.1.0 → 9.1.1, the minimum Flutter 3.50 accepts. The
+  `android-v0.1.1` release workflow failed on CI because of it. CI now builds a
+  debug APK on every push so the Android build is checked before tagging.
 
 ## [Android 0.1.1] - 2026-11-23
 
