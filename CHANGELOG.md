@@ -7,20 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- Android release workflow: pushing an `android-v*` tag builds the APK and App
-  Bundle and attaches them to the GitHub release
-  (`.github/workflows/android-release.yml`).
-
-### Fixed
-
-- Android: the splash switched from the `InkSparkle` shader to `InkRipple`,
-  suspected of causing grey, empty app bar and bottom bar areas in profile
-  builds. Not yet confirmed on a device.
-- Release builds without `android/key.properties` fall back to the debug key
-  (sideload only) instead of failing.
-
 ### Changed
 
 - Deck format spec: document many items per deck, primary quiz modes (select option,
@@ -96,6 +82,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile UI polish: bundled Space Grotesk and JetBrains Mono fonts (OFL),
   refined component themes, quiz hints, and a navigation rail with capped
   content width on wide screens.
+
+## [Android 0.1.1] - 2026-11-23
+
+Android release 0.1.1 (`mobile` version `0.1.1+2`).
+
+### Added
+
+- Android release workflow: pushing an `android-v*` tag builds the APK and App
+  Bundle and attaches them to the GitHub release
+  (`.github/workflows/android-release.yml`).
+
+### Fixed
+
+- Android: the splash switched from the `InkSparkle` shader to `InkRipple`,
+  suspected of causing grey, empty app bar and bottom bar areas in profile
+  builds. Not yet confirmed on a device.
+- Release builds without `android/key.properties` fall back to the debug key
+  (sideload only) instead of failing.
 
 ## [Android 0.1.0] - 2026-11-23
 
