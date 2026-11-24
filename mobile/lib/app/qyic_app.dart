@@ -42,7 +42,15 @@ class QyicApp extends ConsumerWidget {
       theme: QyicTheme.dark(),
       locale: localeFromTag(languageTag),
       supportedLocales: AppLocalizations.supportedLocales,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      // Not AppLocalizations.localizationsDelegates: the generated list uses
+      // flutter_localizations, whose MaterialLocalizations is a different type
+      // from material_ui's. material_ui widgets would then find only its
+      // English fallback and fail in every other language (grey boxes in
+      // release builds).
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
       home: Scaffold(
         body: QyicAsyncView(value: bootstrap, data: (_) => const AppShell()),
       ),
