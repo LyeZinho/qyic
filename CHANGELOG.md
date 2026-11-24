@@ -40,6 +40,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Opening a large deck no longer builds every quiz into one column, which
   overflowed the renderer and killed the window.
+- Android Gradle Plugin 9.1.0 → 9.1.1, the minimum Flutter 3.50 accepts. The
+  `android-v0.1.1` release workflow failed on CI because of it. CI now builds a
+  debug APK on every push so the Android build is checked before tagging.
 
 ### Added
 
