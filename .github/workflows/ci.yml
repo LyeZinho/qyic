@@ -71,6 +71,10 @@ jobs:
         run: flutter analyze
       - name: Test
         run: flutter test
+      # Applies the Flutter Gradle plugin, which rejects an Android Gradle
+      # Plugin older than the Flutter version supports.
+      - name: Build Android (debug)
+        run: flutter build apk --debug
 
   contracts:
     name: Contracts (buf)
